@@ -9,7 +9,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
     align-items: stretch;
     margin-top: 10rem;
 }
-
+.nav li:before{
+    display: none;    
+}
+.nav li a:after{
+    display: none;    
+}
 .read-next-story {
     display: -webkit-box;
     display: -webkit-flex;

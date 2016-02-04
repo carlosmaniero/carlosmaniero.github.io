@@ -753,7 +753,7 @@ body.nav-opened .nav {
     content: counter(item, lower-roman);
     counter-increment: item;
 }
-*/
+    */
 .nav li {
     margin: 0;
 }
@@ -767,14 +767,12 @@ body.nav-opened .nav {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-/*
 .nav li a:after {
     display: inline-block;
     content: " .......................................................";
     color: rgba(255,255,255,0.2);
     margin-left: 5px;
 }
-*/
 .nav .nav-current:before {
     color: #fff;
 }
