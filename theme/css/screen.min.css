@@ -106,3 +106,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 .post.page:after{
     display: none;
 }
+.highlight pre, .highlighttable pre{
+    white-space: pre;
+}
