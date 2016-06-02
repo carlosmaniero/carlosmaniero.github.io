@@ -1,0 +1,3 @@
+[submodule "curso-asyncio"]
+	path = curso-asyncio
+	url = https://github.com/carlosmaniero/curso-asyncio.git
