@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Maniero - python tag</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/code.css" />
+</head>
+
+<body>
+        <header>
+                <h1>
+                    <a href="/">Maniero</a>
+                </h1>
+                    <h2>Personal blog, mostly about software engineering.</h2>
+        </header>
+
+        <div id="page-layout">
+            <nav>
+
+
+
+                    <ul aria-label="Categories">
+                            <li><a href="/category/php.html">PHP</a></li>
+                            <li><a href="/category/python.html">Python</a></li>
+                    </ul>
+            </nav>
+
+            <main>
+<section id="content">
+
+<ol id="post-list">
+        <li><article class="hentry">
+                <header> <h2 class="entry-title"><a href="/asyncio-handle-blocking-functions.html" rel="bookmark" title="Permalink to Asyncio Handle Blocking Functions">Asyncio Handle Blocking Functions</a></h2> </header>
+                <div class="entry-content"> <p>When we use concurrency, all <a href="https://docs.python.org/3/library/asyncio-task.html">tasks</a> are running in the same thread. 
+When the <code>await</code> or <code>yield from</code> keywords is used in the task, 
+the task is suspended and the <a href="https://docs.python.org/3/library/asyncio-eventloop.html">EventLoop</a> executes the next task.
+This will be occur until all tasks are completed.</p>
+<p>If you have a blocking function …</p> </div><!-- /.entry-content -->
+                <footer class="post-info">
+                    <time class="published" datetime="2016-02-03T22:00:00-02:00"> Wed 03 February 2016 </time>
+                </footer><!-- /.post-info -->
+        </article></li>
+</ol><!-- /#posts-list -->
+</section><!-- /#content -->
+            </main>
+        </div>
+        <footer>
+                <address id="about" class="vcard body">
+                    © 2022 Maniero
+                </address><!-- /#about -->
+        </footer>
+</body>
+</html>

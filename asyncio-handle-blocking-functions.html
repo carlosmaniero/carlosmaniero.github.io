@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Maniero - Asyncio Handle Blocking Functions</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/code.css" />
+
+
+
+
+    <meta name="tags" content="python" />
+    <meta name="tags" content="asyncio" />
+
+</head>
+
+<body>
+        <header>
+                <h1>
+                    <a href="/">Maniero</a>
+                </h1>
+                    <h2>Personal blog, mostly about software engineering.</h2>
+        </header>
+
+        <div id="page-layout">
+            <nav>
+
+
+
+                    <ul aria-label="Categories">
+                            <li><a href="/category/php.html">PHP</a></li>
+                            <li class="active"><a href="/category/python.html">Python</a></li>
+                    </ul>
+            </nav>
+
+            <main>
+  <header>
+    <h1 class="entry-title">
+      <a href="/asyncio-handle-blocking-functions.html" rel="bookmark"
+         title="Permalink to Asyncio Handle Blocking Functions">Asyncio Handle Blocking Functions</a></h1>
+ 
+  </header>
+  <article>
+    <p>When we use concurrency, all <a href="https://docs.python.org/3/library/asyncio-task.html">tasks</a> are running in the same thread. 
+When the <code>await</code> or <code>yield from</code> keywords is used in the task, 
+the task is suspended and the <a href="https://docs.python.org/3/library/asyncio-eventloop.html">EventLoop</a> executes the next task.
+This will be occur until all tasks are completed.</p>
+<p>If you have a blocking function, by example, a web request.
+All tasks will wait the blocking function be completed. See this example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">42</span>
+
+
+<span class="nd">@asyncio</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+    <span class="n">slow_function</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finish test1&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@asyncio</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finish test2&#39;</span><span class="p">)</span>
+
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">([</span>
+        <span class="n">test1</span><span class="p">(),</span>
+        <span class="n">test2</span><span class="p">()</span>
+    <span class="p">])</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="highlight"><pre><span></span><code>Finish test1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Finish test2
+</code></pre></div>
+
+<p>How can we see, the <code>EventLoop</code> run the test1
+and the test2 only starts after the test1 is completed.</p>
+<p>If you need execute a blocking functions you can use the 
+<a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor">run_in_executor()</a>
+method of the <code>EventLoop</code>, this will be run the function in an executor 
+(by default the <a href="https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor">ThreadPoolExecutor</a>).</p>
+<p>The usage of <code>run_in_executor</code> is like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">executor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+
+<p>When the <code>*args</code> will be the args of <code>fn</code>.</p>
+<p>Now, the same example using the <code>run_in_executor</code> and its output.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">42</span>
+
+
+<span class="nd">@asyncio</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="n">loop</span><span class="p">):</span>
+    <span class="k">yield from</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">slow_function</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finish test1&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@asyncio</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finish test2&#39;</span><span class="p">)</span>
+
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">([</span>
+        <span class="n">test1</span><span class="p">(</span><span class="n">loop</span><span class="p">),</span>
+        <span class="n">test2</span><span class="p">()</span>
+    <span class="p">])</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">0</span><span class="w"></span>
+<span class="mf">1</span><span class="w"></span>
+<span class="mf">2</span><span class="w"></span>
+<span class="mf">3</span><span class="w"></span>
+<span class="mf">4</span><span class="w"></span>
+<span class="mf">5</span><span class="w"></span>
+<span class="n">Finish</span><span class="w"> </span><span class="n">test1</span><span class="w"></span>
+<span class="mf">6</span><span class="w"></span>
+<span class="mf">7</span><span class="w"></span>
+<span class="mf">8</span><span class="w"></span>
+<span class="mf">9</span><span class="w"></span>
+<span class="n">Finish</span><span class="w"> </span><span class="n">test2</span><span class="w"></span>
+</code></pre></div>
+
+<p>Now, the test2 can be executed while the test1 waits from the <code>slow_function</code> response.</p>
+  </article>
+  <footer class="post-info">
+    <time class="published" datetime="2016-02-03T22:00:00-02:00">
+      Wed 03 February 2016
+    </time>
+    <div class="category">
+        Category: <a href="/category/python.html">Python</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/python.html">python</a>
+            <a href="/tag/asyncio.html">asyncio</a>
+    </div>
+  </footer><!-- /.post-info -->
+            </main>
+        </div>
+        <footer>
+                <address id="about" class="vcard body">
+                    © 2022 Maniero
+                </address><!-- /#about -->
+        </footer>
+</body>
+</html>
