@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maniero</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-11-19T00:00:00-03:00</updated><subtitle>Personal blog, mostly about software engineering.</subtitle><entry><title>We've got lost in tech</title><link href="/weve-got-lost-in-tech.html" rel="alternate"></link><published>2022-11-19T00:00:00-03:00</published><updated>2022-11-19T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:None,2022-11-19:/weve-got-lost-in-tech.html</id><summary type="html">&lt;p&gt;Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
+because some rich-white-guy with enough money to keep several generations of his family tree
+away from work could not handle seeing their company stocks going down.
+Or because some other rich-white-guy thinks that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
+because some rich-white-guy with enough money to keep several generations of his family tree
+away from work could not handle seeing their company stocks going down.
+Or because some other rich-white-guy thinks that the only way to get stuff done is by
+working a hundred hours a week and worst, without knowing where to go. All this crap makes me
+think a lot about the current state of tech...&lt;/p&gt;
+&lt;h2&gt;All is vanity&lt;/h2&gt;
+&lt;p&gt;Before writing  down my thought on tech I'd like to talk about my relationship with the
+Internet and how it affetcs my career.&lt;/p&gt;
+&lt;p&gt;I made a lot of things to get promoted and no shame on it, but also there are a whole lot of
+things that I made for my ego, and &lt;em&gt;"welcome to the internet! Come and take a seat"&lt;/em&gt;.
+That is how the internet works! We expose ourselves to massage our egos. That sucks!&lt;/p&gt;
+&lt;p&gt;As an ex-software consultant, I've talked a lot about how important it is for companies to be
+data-driven. 
+Every time I posted on &lt;a href="https://maniero.medium.com/"&gt;Medium&lt;/a&gt;,
+I spent weeks following the numbers, looking at how many views and claps I had.&lt;/p&gt;
+&lt;p&gt;I'm talking about 50 readers/month it is not like I hit at least once, even though I was
+obsessed to see the numbers growing at least a little. &lt;/p&gt;
+&lt;p&gt;No numbers, no anxiety. I rebuilt my personal blog and I removed every single tracking script from my blog.
+The only two companies that will know you read this article are 
+Microsoft (I'm using Github pages) and your ISP.&lt;/p&gt;
+&lt;p&gt;I'd like to write because I like to do so, not because I would like
+to be a tech reference or anything like it. Time was easy when there wasn't so many things
+happening at once and so much data to monitor.&lt;/p&gt;
+&lt;h2&gt;Simplicity not allowed!&lt;/h2&gt;
+&lt;p&gt;Back to the tech business, the same thing happens when we are coding. 
+We don't code for fun at work. We code for money. But we also code to prove ourselves to our
+coworkers. And this is a problem.&lt;/p&gt;
+&lt;p&gt;In one of my jobs, I needed to present a list of five &lt;strong&gt;hard-coded&lt;/strong&gt; items in a specific
+order. I solved the issue in 2 minutes. I took the list and manually sorted it.
+To my surprise, PR rejected! The argument was that the list could grow and engineers
+could break the sorting when adding a new item.
+Then we designed how the sort would behave based on a set of the entity's properties.&lt;/p&gt;
+&lt;p&gt;After a year that list recieved two extra items. The list never grew that much but that
+chunk of code received more and more complexity.&lt;/p&gt;
+&lt;h2&gt;Make stuff working&lt;/h2&gt;
+&lt;p&gt;It has been a while since I've had fun coding. It does not mean that I've been frustrated
+at work. I found joy in other activities, such as product management and leadership.
+But I'm still a software developer and have no intention of switching roles. In my free time,
+I'm going back to the basics: I started again to study how computers work. &lt;/p&gt;
+&lt;p&gt;To learn how simple things used to be is amazing. We have new and more complex challenges,
+no doubt. But the challenges and how we handle them look completely out of proportion to me.&lt;/p&gt;
+&lt;p&gt;Last week I learned how to print "Hello World" only using BIOS's Legacy Boot.
+It only took me a couple of assembly lines. Sometimes
+that's all that I'd like... To sit into my chair, to code and see it working.&lt;/p&gt;
+&lt;h2&gt;Scaling&lt;/h2&gt;
+&lt;p&gt;I know that we need to scale. I also know that scale almost ever leads to complexity.
+This complexity should be handled cautiously. When companies start to worry about scale,
+they hire like there will be no paychecks. 
+All that people need to work, and guess what we do?&lt;/p&gt;
+&lt;p&gt;We start splitting the application into small business units. Sometimes these business units
+are so small that holds only a little chunk of the customer's experience. Once we've got there,
+it is almost impossible to roll back. You gonna need more and more developers,
+the complexity will not stop growing. A simple feature will require changes in
+several services, needs to be aligned with multiple teams. Of course, it take a lot of time
+to be done. &lt;/p&gt;
+&lt;h2&gt;The infinite money era is gone&lt;/h2&gt;
+&lt;p&gt;For the last few years, we have been living like there is infinite fundraising. But that
+time is over. The result: Layoffs. As a software engineer, you may not have control
+over the stock market (if you do, let's be friends, please!).
+But you do have control over the complexity of your team's solution.
+Make stuff simple as your job depends on it. Because it does.&lt;/p&gt;</content><category term="Engineer life"></category></entry><entry><title>Asyncio Handle Blocking Functions</title><link href="/asyncio-handle-blocking-functions.html" rel="alternate"></link><published>2016-02-03T22:00:00-02:00</published><updated>2016-02-03T22:00:00-02:00</updated><author><name>Maniero</name></author><id>tag:None,2016-02-03:/asyncio-handle-blocking-functions.html</id><summary type="html">&lt;p&gt;When we use concurrency, all tasks are running in the same thread. When the await or yield from keywords is used in the task, the task is suspended and the EventLoop executes the next task. This will be occur until all tasks are completed…&lt;/p&gt;</summary><content type="html">&lt;p&gt;When we use concurrency, all &lt;a href="https://docs.python.org/3/library/asyncio-task.html"&gt;tasks&lt;/a&gt; are running in the same thread. 
+When the &lt;code&gt;await&lt;/code&gt; or &lt;code&gt;yield from&lt;/code&gt; keywords is used in the task, 
+the task is suspended and the &lt;a href="https://docs.python.org/3/library/asyncio-eventloop.html"&gt;EventLoop&lt;/a&gt; executes the next task.
+This will be occur until all tasks are completed.&lt;/p&gt;
+&lt;p&gt;If you have a blocking function, by example, a web request.
+All tasks will wait the blocking function be completed. See this example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;asyncio&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;slow_function&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coroutine&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;slow_function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Finish test1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coroutine&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test2&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;yield from&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Finish test2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="n"&gt;loop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_event_loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_until_complete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;
+        &lt;span class="n"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+        &lt;span class="n"&gt;test2&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Finish test1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Finish test2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;How can we see, the &lt;code&gt;EventLoop&lt;/code&gt; run the test1
+and the test2 only starts after the test1 is completed.&lt;/p&gt;
+&lt;p&gt;If you need execute a blocking functions you can use the 
+&lt;a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor"&gt;run_in_executor()&lt;/a&gt;
+method of the &lt;code&gt;EventLoop&lt;/code&gt;, this will be run the function in an executor 
+(by default the &lt;a href="https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor"&gt;ThreadPoolExecutor&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The usage of &lt;code&gt;run_in_executor&lt;/code&gt; is like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_in_executor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;executor&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When the &lt;code&gt;*args&lt;/code&gt; will be the args of &lt;code&gt;fn&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, the same example using the &lt;code&gt;run_in_executor&lt;/code&gt; and its output.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;asyncio&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;slow_function&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coroutine&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;yield from&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_in_executor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;slow_function&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Finish test1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coroutine&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test2&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;yield from&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Finish test2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="n"&gt;loop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_event_loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_until_complete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;
+        &lt;span class="n"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="n"&gt;test2&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;3&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;4&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;5&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Finish&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;6&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;7&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;9&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Finish&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, the test2 can be executed while the test1 waits from the &lt;code&gt;slow_function&lt;/code&gt; response.&lt;/p&gt;</content><category term="Python"></category><category term="python"></category><category term="asyncio"></category></entry><entry><title>PHP - Long Polling</title><link href="/php-long-polling.html" rel="alternate"></link><published>2012-07-18T11:25:00-03:00</published><updated>2012-07-18T11:25:00-03:00</updated><author><name>Maniero</name></author><id>tag:None,2012-07-18:/php-long-polling.html</id><summary type="html">&lt;p&gt;Long Polling is a technique used when you need create a real time application,
+where the server will wait from a event occur to response the request.&lt;/p&gt;
+&lt;p&gt;On this example, we will create a webchat, using a simple text file.
+The server will read the text file,
+and will hold …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Long Polling is a technique used when you need create a real time application,
+where the server will wait from a event occur to response the request.&lt;/p&gt;
+&lt;p&gt;On this example, we will create a webchat, using a simple text file.
+The server will read the text file,
+and will hold the conection until the file has new lines.
+To check it, the server will receive the current line number.&lt;/p&gt;
+&lt;p&gt;Go to the code&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class="c1"&gt;// Disable max runtime&lt;/span&gt;
+&lt;span class="nb"&gt;set_time_limit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$cur_line&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;    
+    &lt;span class="c1"&gt;// An infinite loop&lt;/span&gt;
+    &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;true&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;    
+        &lt;span class="c1"&gt;// Read the file&lt;/span&gt;
+        &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;file_get_contents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;chat.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nv"&gt;$lines&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;explode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;$cur_line&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])){&lt;/span&gt;
+            &lt;span class="c1"&gt;// Sleep for 1 seccond if no new line&lt;/span&gt;
+            &lt;span class="nb"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+        &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nv"&gt;$ret&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="nv"&gt;$ret&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="c1"&gt;// Put new lines in the vector&lt;/span&gt;
+            &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$cur_line&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nv"&gt;$cur_line&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nb"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="nv"&gt;$cur_line&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+                &lt;span class="nv"&gt;$ret&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$cur_line&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="c1"&gt;// Update the cur_line to response&lt;/span&gt;
+            &lt;span class="nv"&gt;$ret&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cur_line&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$cur_line&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="c1"&gt;// Return an JSON&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;json_encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$ret&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;// echo the result&lt;/span&gt;
+&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_POST&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cur_line&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can see the complete code &lt;a href="https://github.com/carlosmaniero/Php-long-polling"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4&gt;Old Post&lt;/h4&gt;
+&lt;p&gt;This is an old post migrated from my old blog. 
+You can see the original content &lt;a href="http://carlosmaniero.blogspot.com.br/2012/07/php-long-polling.html"&gt;here&lt;/a&gt;[pt-br]&lt;/p&gt;</content><category term="PHP"></category><category term="PHP"></category></entry></feed>
