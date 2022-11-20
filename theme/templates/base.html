@@ -73,6 +73,13 @@
                     </ul>
                 {% endif %}
 
+                <ul aria-label="Links">
+                    <li>
+                        <a href="mailto:carlosmaniero@gmail.com">Email</a>
+                        <a target="_blank" href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml">RSS</a>
+                    </li>
+                </ul>
+
                 <ul aria-label="Accessibility">
                     <li>
                         <button class="lights" href="">
