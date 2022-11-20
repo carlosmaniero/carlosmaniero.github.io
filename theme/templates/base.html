@@ -47,7 +47,6 @@
 
         <div id="page-layout">
             <nav>
-
                 {% if MENUTIEMS %}
                 <ul>
                     {% for title, link in MENUITEMS %}
@@ -73,6 +72,15 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+
+                <ul aria-label="Accessibility">
+                    <li>
+                        <button class="lights" href="">
+                            Toggle lights
+                        </button>
+                    </li>
+                </ul>
+
             </nav>
 
             <main>
@@ -85,5 +93,29 @@
                     © 2022 Maniero
                 </address><!-- /#about -->
         </footer>
+        <script type="text/javascript">
+         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+         const isDarkModeEnabled = () => {
+             const localValue = localStorage.getItem("dark-mode");
+             if (localValue) {
+                 return localValue === "true";
+             }
+             return !!prefersDarkMode;
+         }
+
+         const toggleDarkModeState = () => localStorage.setItem("dark-mode", !isDarkModeEnabled());
+
+         const toggleThemeTag = () => {
+             const root = document.getElementsByTagName( 'html' )[0]; // '0' to assign the first (and only `HTML` tag)
+             root.setAttribute('data-dark-theme', isDarkModeEnabled());
+         }
+
+         toggleThemeTag();
+
+         document.querySelector('.lights').addEventListener('click', () => {
+             toggleDarkModeState();
+             toggleThemeTag();
+         });
+        </script>
 </body>
 </html>

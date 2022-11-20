@@ -24,14 +24,12 @@
     --spacing-2x: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: var(--color-dark);
-        --color-primary: var(--color-white);
-        --color-primary-transparent: #fdfffc33;
-        --color-link: #8da9c4;
-        --color-link-hover: #8da9c466;
-    }
+html[data-dark-theme="true"] {
+    --color-background: var(--color-dark);
+    --color-primary: var(--color-white);
+    --color-primary-transparent: #fdfffc33;
+    --color-link: #8da9c4;
+    --color-link-hover: #8da9c466;
 }
 
 body, html {
@@ -41,10 +39,10 @@ body, html {
 
 * {
     box-sizing: border-box;
+    font-family: noto-serif, serif;
 }
 
 body {
-    font-family: noto-serif, serif;
     background: var(--color-background);
     color: var(--color-primary);
     font-size: var(--font-size-default);
@@ -75,7 +73,6 @@ p {
 
 a {
     color: var(--color-link);
-    transition: color .3s ease;
 }
 
 hr {
@@ -165,6 +162,10 @@ pre {
     font-size: var(--font-size-big);
 }
 
+#page-layout > nav ul:not(:first-child){
+    margin-top: var(--spacing-2x);
+}
+
 #page-layout > nav ul a {
     text-decoration: none;
     display: block;
@@ -193,4 +194,14 @@ h1.entry-title a {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.lights {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: var(--font-size-default);
+    padding: var(--spacing-1x) 0;
+    color: var(--color-link);
+    cursor: pointer;
 }
