@@ -2,6 +2,7 @@ Title: Asyncio Handle Blocking Functions
 Date: 2016-02-03 22:00
 Category: Python
 Tags: python, asyncio
+Summary: When we use concurrency, all tasks are running in the same thread. When the await or yield from keywords is used in the task, the task is suspended and the EventLoop executes the next task. This will be occur until all tasks are completed…
 
 
 When we use concurrency, all [tasks](https://docs.python.org/3/library/asyncio-task.html) are running in the same thread. 

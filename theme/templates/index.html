@@ -5,7 +5,11 @@
 <ol id="post-list">
 {% for article in articles_page.object_list %}
         <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                    </h2>
+                </header>
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
                 <footer class="post-info">
                     <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>

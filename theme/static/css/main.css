@@ -15,7 +15,7 @@
     --color-link-hover: #13315c66;
 
     --font-size-bigger: 1.5rem;
-    --font-size-big: 1.25rem;
+    --font-size-big: 1.2rem;
     --font-size-default: 1rem;
     --font-size-small: 0.75rem;
 
@@ -49,6 +49,7 @@ body {
     color: var(--color-primary);
     font-size: var(--font-size-default);
     padding: var(--spacing-2x);
+    text-rendering: optimizeLegibility;
 }
 
 body > header {
@@ -62,6 +63,14 @@ body > header {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: var(--spacing-2x);
+}
+
+p {
+    line-height: 1.75;
 }
 
 a {
@@ -128,6 +137,10 @@ pre {
     padding-right: var(--spacing-2x);
 }
 
+#page-layout main {
+    max-width: min(680px, 100%);
+}
+
 @media screen and (max-width: 880px) {
     #page-layout > nav {
         display: none;
@@ -138,10 +151,6 @@ pre {
         padding-bottom: var(--spacing-1x);
         flex-direction: column;
     }
-}
-
-#page-layout main {
-    max-width: min(820px, 100%);
 }
 
 #page-layout > nav ul {
@@ -169,6 +178,10 @@ pre {
 
 .entry-title {
     margin-bottom: var(--spacing-1x);
+}
+h1.entry-title a {
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 .hentry {
