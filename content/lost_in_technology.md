@@ -1,7 +1,6 @@
 Title: We've got lost in tech
 Date: 2022-11-19
 Category: Engineer life
-Status: draft
 
 Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
 because some rich-white-guy with enough money to keep several generations of his family tree
