@@ -31,7 +31,7 @@ to understand how they work.&lt;/p&gt;
 &lt;p&gt;In terms of open-source, there is no doubt that Linux is a work of art, and
 I've no idea how it works under the hood. All I know is that a bootloader
 such as GRUB loads the operating system, but that is all I know...
-better to say that &lt;em&gt;was&lt;/em&gt; all I know.&lt;/p&gt;
+better to say that &lt;em&gt;was&lt;/em&gt; all I &lt;em&gt;knew&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;I intend to make a few small posts documenting my progress. For now, All
 I have is a simple bootloader using BIOS Legacy Boot. It is so beautiful!&lt;/p&gt;
 &lt;p&gt;&lt;img alt="DunnOS bootloader" src="images/dunnos-building-by-own-os/bootloader.png"&gt;&lt;/p&gt;
