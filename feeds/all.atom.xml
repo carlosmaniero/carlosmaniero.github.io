@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maniero</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-11-19T00:00:00-03:00</updated><subtitle>Personal blog, mostly about software engineering.</subtitle><entry><title>We've got lost in tech</title><link href="/weve-got-lost-in-tech.html" rel="alternate"></link><published>2022-11-19T00:00:00-03:00</published><updated>2022-11-19T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:None,2022-11-19:/weve-got-lost-in-tech.html</id><summary type="html">&lt;p&gt;Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maniero</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-11-28T00:00:00-03:00</updated><subtitle>Personal blog, mostly about software engineering.</subtitle><entry><title>DunnOS - Building my own OS</title><link href="/dunnos-building-my-own-os.html" rel="alternate"></link><published>2022-11-28T00:00:00-03:00</published><updated>2022-11-28T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:None,2022-11-28:/dunnos-building-my-own-os.html</id><summary type="html">&lt;p&gt;I believe that every single developer has thought about building
+their OS. At least a Linux distro, or maybe their 
+programming language.&lt;/p&gt;
+&lt;p&gt;Taking the first step is hard. You may have had a few lessons on assembly
+and how computers work in college (if you went on one), but it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I believe that every single developer has thought about building
+their OS. At least a Linux distro, or maybe their 
+programming language.&lt;/p&gt;
+&lt;p&gt;Taking the first step is hard. You may have had a few lessons on assembly
+and how computers work in college (if you went on one), but it is hard to
+put this knowledge into practice in the modern tech industry.&lt;/p&gt;
+&lt;h2&gt;Doing to learn&lt;/h2&gt;
+&lt;p&gt;It has been nice to do stuff just because I want to. My only goal
+is learning. And I have made some pretty cool stuff since I started to 
+learn more low-level stuff.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I made a lisp programming language to sum numbers using LLVM 😂 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/carlosmaniero/mars" target="_blank"&gt;Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/carlosmaniero/mars/blob/main/demo/sum.mars" target="_blank"&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I wrote a lightweight unit-test tool for assembly:&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/carlosmaniero/assembly-study" target="_blank"&gt;Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;None of these projects went too far. But who cares! I learned a lot on the 
+way. And I really recommend you to do stuff just because you would like
+to understand how they work.&lt;/p&gt;
+&lt;h2&gt;Why an OS?&lt;/h2&gt;
+&lt;p&gt;In terms of open-source, there is no doubt that Linux is a work of art, and
+I've no idea how it works under the hood. All I know is that a bootloader
+such as GRUB loads the operating system, but that is all I know...
+better to say that &lt;em&gt;was&lt;/em&gt; all I know.&lt;/p&gt;
+&lt;p&gt;I intend to make a few small posts documenting my progress. For now, All
+I have is a simple bootloader using BIOS Legacy Boot. It is so beautiful!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="DunnOS bootloader" src="images/dunnos-building-by-own-os/bootloader.png"&gt;&lt;/p&gt;
+&lt;p&gt;For know you can follow the progress 
+&lt;a href="https://github.com/carlosmaniero/dunnos" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="Engineer life"></category></entry><entry><title>We've got lost in tech</title><link href="/weve-got-lost-in-tech.html" rel="alternate"></link><published>2022-11-19T00:00:00-03:00</published><updated>2022-11-19T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:None,2022-11-19:/weve-got-lost-in-tech.html</id><summary type="html">&lt;p&gt;Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
 because some rich-white-guy with enough money to keep several generations of his family tree
 away from work could not handle seeing their company stocks going down.
 Or because some other rich-white-guy thinks that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yeah! A lot of shit is going on in tech recently. I've friends who lost their jobs
