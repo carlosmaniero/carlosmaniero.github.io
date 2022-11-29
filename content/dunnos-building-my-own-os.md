@@ -30,7 +30,7 @@ to understand how they work.
 In terms of open-source, there is no doubt that Linux is a work of art, and
 I've no idea how it works under the hood. All I know is that a bootloader
 such as GRUB loads the operating system, but that is all I know...
-better to say that *was* all I know.
+better to say that *was* all I *knew*.
 
 I intend to make a few small posts documenting my progress. For now, All
 I have is a simple bootloader using BIOS Legacy Boot. It is so beautiful!
