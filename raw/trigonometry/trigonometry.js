@@ -1,6 +1,10 @@
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const $canvas = document.getElementById("canvas")
+    const hasMultitouch = 'maxTouchPoints' in navigator && navigator.maxTouchPoints > 1
+    const instructionText = hasMultitouch
+          ? "Use a two-finger gesture to control the drawing."
+          : "Move your mouse or click to define the position of the circle."
 
     $canvas.width = window.innerWidth
     $canvas.height = window.innerHeight
@@ -16,7 +20,7 @@
 
     const drawInstructions = () => {
       $context.font = "12px sans-serif";
-      $context.fillText("Move your mouse or click to define the position of the circle.", 50, 50)
+      $context.fillText(instructionText, 50, 50)
     }
 
     const drawPoint = (x, y) => {
