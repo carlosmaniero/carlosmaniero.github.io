@@ -8,6 +8,10 @@
     let initialPositionX = window.innerWidth / 2
     let initialPositionY = window.innerHeight / 2
 
+    let clientX = initialPositionX
+    let clientY = initialPositionY
+    let executionId = 0;
+
     const $context = $canvas.getContext('2d')
 
     const drawInstructions = () => {
@@ -26,7 +30,11 @@
       }
     }
 
-    const draw = (clientX, clientY) => {
+    const draw = (currentClientX, currentClientY) => {
+      if (currentClientX != clientX || currentClientY != clientY) {
+        return
+      }
+
       $context.clearRect(0, 0, $canvas.width, $canvas.height)
 
       const baseCircleSize = 100
@@ -42,20 +50,32 @@
       drawInstructions()
     }
 
-    drawInstructions()
+    const animate = () => {
+      draw(clientX, clientY)
+      requestAnimationFrame(animate)
+    }
+
+    animate()
 
     document.addEventListener('click', (e) => {
-      initialPositionX = e.clientX
-      initialPositionY = e.clientY
-      draw(e.clientX, e.clientY)
+      clientX = initialPositionX = e.clientX
+      clientY = initialPositionY = e.clientY
     })
 
     document.addEventListener('mousemove', (e) => {
-      draw(e.clientX, e.clientY)
+      clientX = e.clientX
+      clientY = e.clientY
     })
 
     document.addEventListener('touchmove', (e) => {
-      draw(e.touches[0].clientX, e.touches[0].clientY)
+      e.preventDefault()
+      clientX = e.touches[0].clientX
+      clientY = e.touches[0].clientY
+
+      if (e.touches[1]) {
+        initialPositionX = e.touches[1].clientX
+        initialPositionY = e.touches[1].clientY
+      }
     })
   })
 })()
