@@ -33,7 +33,7 @@
 
       for(let i = 0; i <= baseCircleSize; i += baseCircleSize / 100) {
         const factor = 1 - (i / 100)
-        const color = Math.floor(factor * 0xff).toString(16).padStart(2)
+        const color = Math.floor((i / 100) * 0xff).toString(16).padStart(2, '0')
         $context.fillStyle = "#" + color + color + color
 
         drawCircle(i, [initialPositionX + ((clientX - initialPositionX) * factor),
@@ -52,6 +52,10 @@
 
     document.addEventListener('mousemove', (e) => {
       draw(e.clientX, e.clientY)
+    })
+
+    document.addEventListener('touchmove', (e) => {
+      draw(e.touches[0].clientX, e.touches[0].clientY)
     })
   })
 })()
