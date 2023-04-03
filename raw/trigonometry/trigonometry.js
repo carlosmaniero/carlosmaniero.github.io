@@ -20,7 +20,7 @@
     const drawInstructions = () => {
       $context.fillStyle = 'white'
       $context.font = "12px sans-serif"
-      $context.fillText(instructionText, 50, 50)
+      $context.fillText(instructionText, 12, 28)
     }
 
     const drawPoint = (imageData, color, x, y) => {
@@ -58,11 +58,11 @@
 
       const imageData = $context.createImageData($canvas.width, $canvas.height)
 
-      const baseCircleSize = 100
+      const baseCircleSize = 150
 
       for(let i = 0; i <= baseCircleSize; i += baseCircleSize / 100) {
-        const factor = 1 - (i / 100)
-        const color = Math.round((i / 100) * 255)
+        const factor = 1 - (i / baseCircleSize)
+        const color = Math.round((i / baseCircleSize) * 255)
 
         drawCircle(imageData, color, i, [initialPositionX + ((clientX - initialPositionX) * factor),
                        initialPositionY + ((clientY - initialPositionY) * factor)])
