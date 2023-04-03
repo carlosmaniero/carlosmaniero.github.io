@@ -6,11 +6,21 @@
           ? "Use a two-finger gesture to control the drawing."
           : "Move your mouse or click to define the position of the circle."
 
-    $canvas.width = window.innerWidth
-    $canvas.height = window.innerHeight
+    let baseCircleSize
+    let initialPositionX
+    let initialPositionY
 
-    let initialPositionX = window.innerWidth / 2
-    let initialPositionY = window.innerHeight / 2
+    const setDefaults = () => {
+      $canvas.width = window.innerWidth
+      $canvas.height = window.innerHeight
+
+      baseCircleSize = Math.floor(Math.min(window.innerHeight, window.innerWidth, 200 / 0.4) * 0.4) // 80% of screen size
+
+      initialPositionX = $canvas.width / 2
+      initialPositionY = $canvas.height / 2
+    }
+
+    setDefaults()
 
     let clientX = initialPositionX
     let clientY = initialPositionY
@@ -49,6 +59,7 @@
       }
     }
 
+
     const draw = (currentClientX, currentClientY) => {
       if (currentClientX != clientX || currentClientY != clientY) {
         return
@@ -57,8 +68,6 @@
       $context.clearRect(0, 0, $canvas.width, $canvas.height)
 
       const imageData = $context.createImageData($canvas.width, $canvas.height)
-
-      const baseCircleSize = 150
 
       for(let i = 0; i <= baseCircleSize; i += baseCircleSize / 100) {
         const factor = 1 - (i / baseCircleSize)
@@ -99,5 +108,6 @@
         initialPositionY = e.touches[1].clientY
       }
     })
+    window.addEventListener('resize', () => setDefaults())
   })
 })()
