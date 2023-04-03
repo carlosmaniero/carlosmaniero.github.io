@@ -18,12 +18,20 @@
     const $context = $canvas.getContext('2d')
 
     const drawInstructions = () => {
+      $context.fillStyle = 'white'
       $context.font = "12px sans-serif"
       $context.fillText(instructionText, 50, 50)
     }
 
-    const drawPoint = (x, y) => {
-      $context.fillRect(x, y, 1, 1)
+    const drawPoint = (imageData, color, x, y) => {
+      if (x > imageData.width - 1 || y > imageData.height - 1 || x < 1 || y < 1) {
+        return
+      }
+      const index = (Math.round(y) * imageData.width + Math.round(x)) * 4
+      imageData.data[index] = color
+      imageData.data[index + 1] = color
+      imageData.data[index + 2] = color
+      imageData.data[index + 3] = 255
     }
 
     const fullTurnInRadians = 2 * Math.PI
@@ -33,11 +41,11 @@
       return fullTurnInRadians / perimiter
     }
 
-    const drawCircle = (radius, [x, y]) => {
+    const drawCircle = (imageData, color, radius, [x, y]) => {
       const factor = numberOfPixelsRequiredToRenderACircleWithRadius(radius)
 
       for(let radians = 0; radians < fullTurnInRadians; radians += factor) {
-        drawPoint(Math.cos(radians) * radius + x, Math.sin(radians) * radius + y)
+        drawPoint(imageData, color, Math.cos(radians) * radius + x, Math.sin(radians) * radius + y)
       }
     }
 
@@ -48,16 +56,19 @@
 
       $context.clearRect(0, 0, $canvas.width, $canvas.height)
 
+      const imageData = $context.createImageData($canvas.width, $canvas.height)
+
       const baseCircleSize = 100
 
       for(let i = 0; i <= baseCircleSize; i += baseCircleSize / 100) {
         const factor = 1 - (i / 100)
-        const color = Math.floor((i / 100) * 0xff).toString(16).padStart(2, '0')
-        $context.fillStyle = "#" + color + color + color
+        const color = Math.round((i / 100) * 255)
 
-        drawCircle(i, [initialPositionX + ((clientX - initialPositionX) * factor),
+        drawCircle(imageData, color, i, [initialPositionX + ((clientX - initialPositionX) * factor),
                        initialPositionY + ((clientY - initialPositionY) * factor)])
       }
+      $context.putImageData(imageData, 0, 0)
+
       drawInstructions()
     }
 
