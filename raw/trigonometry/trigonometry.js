@@ -14,12 +14,11 @@
 
     let clientX = initialPositionX
     let clientY = initialPositionY
-    let executionId = 0;
 
     const $context = $canvas.getContext('2d')
 
     const drawInstructions = () => {
-      $context.font = "12px sans-serif";
+      $context.font = "12px sans-serif"
       $context.fillText(instructionText, 50, 50)
     }
 
@@ -27,10 +26,18 @@
       $context.fillRect(x, y, 1, 1)
     }
 
+    const fullTurnInRadians = 2 * Math.PI
 
-    const drawCircle = (size, [x, y]) => {
-      for(let angle = 0; angle < 360; angle += 1) {
-        drawPoint(Math.cos(angle) * size + x, Math.sin(angle) * size + y)
+    const numberOfPixelsRequiredToRenderACircleWithRadius = (radius) => {
+      const perimiter = radius * 2 * Math.PI
+      return fullTurnInRadians / perimiter
+    }
+
+    const drawCircle = (radius, [x, y]) => {
+      const factor = numberOfPixelsRequiredToRenderACircleWithRadius(radius)
+
+      for(let radians = 0; radians < fullTurnInRadians; radians += factor) {
+        drawPoint(Math.cos(radians) * radius + x, Math.sin(radians) * radius + y)
       }
     }
 
