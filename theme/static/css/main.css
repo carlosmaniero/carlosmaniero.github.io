@@ -7,7 +7,7 @@
 
 :root {
     --color-white: #fdfffc;
-    --color-dark: #011627;
+    --color-dark: #011214;
     --color-background: var(--color-white);
     --color-primary: var(--color-dark);
     --color-primary-transparent: #011627CC;
@@ -16,7 +16,7 @@
 
     --font-size-bigger: 1.5rem;
     --font-size-big: 1.2rem;
-    --font-size-default: 1rem;
+    --font-size-default: 1.125rem;
     --font-size-small: 0.75rem;
 
     --spacing-half: 0.5rem;
@@ -40,6 +40,13 @@ body, html {
 * {
     box-sizing: border-box;
     font-family: noto-serif, serif;
+}
+
+blockquote {
+    border-left: 1px solid var(--color-primary);
+    margin: 0;
+    padding: 0 var(--spacing-2x);
+    font-style: italic;
 }
 
 body {
