@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Maniero - A WORD in Software testing</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/code.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maniero Full Atom Feed" />
+
+
+
+
+
+</head>
+
+<body>
+        <header>
+            <h1>
+                <a href="/">Maniero</a>
+            </h1>
+                <h2>Personal blog, mostly about software engineering.</h2>
+        </header>
+
+        <div id="page-layout">
+            <nav>
+
+
+                    <ul aria-label="Categories">
+                            <li class="active"><a href="/category/engineer-life.html">Engineer life</a></li>
+                            <li><a href="/category/php.html">PHP</a></li>
+                            <li><a href="/category/python.html">Python</a></li>
+                    </ul>
+
+                <ul aria-label="Links">
+                    <li>
+                        <a href="mailto:carlosmaniero@gmail.com">Email</a>
+                        <a target="_blank" href="/feeds/all.atom.xml" type="application/atom+xml">RSS</a>
+                    </li>
+                </ul>
+
+                <ul aria-label="Accessibility">
+                    <li>
+                        <button class="lights" href="">
+                            Toggle lights
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <main>
+  <header>
+    <h1 class="entry-title">
+      <a href="/a-word-in-software-testing.html" rel="bookmark"
+         title="Permalink to A WORD in Software testing">A WORD in Software testing</a></h1>
+ 
+  </header>
+  <article>
+    <p>Software testing has long been a critical component of ensuring software quality. 
+If you are familiar with the ACCELERATE book, you'll know that continuous delivery
+is key to achieving a high-performance organization, and a good testing strategy 
+is essential to enable it.</p>
+<p>There are many resources about testing, integration tests, unit tests, TDD, and so on.
+I would like to have a more abstract discussion about what you should to consider
+before taking decisions on testing. </p>
+<p>Long story short, after several meaningful discussions with many teams, 
+I've noticed that we always end up with four key principles, 
+which I describe using the acronym <strong>W.O.R.D.</strong></p>
+<h2>W.O.R.D.</h2>
+<ul>
+<li>It <strong>Works</strong>.</li>
+<li>It <strong>Orients</strong> the development and code design.</li>
+<li>It is easy to <strong>Refactor</strong>.</li>
+<li>It is a <strong>Debugging</strong> tool.</li>
+</ul>
+<h2>It WORKS!</h2>
+<p>One of the main concerns in software quality is to:</p>
+<blockquote>
+<p>"satisfy the customer through 
+ early and continuous delivery of valuable software".
+ <a href="https://agilemanifesto.org/principles.html">Agile Manifesto</a></p>
+</blockquote>
+<p>Any testing strategy must provide the safety that any change that passes all tests 
+can be ship to production with no fear. A testing strategy that covers the application
+into different levels is required to reach that confidence. </p>
+<p>It also requires a team that fully understands that software quality is a role of all.
+Testing culture is an important matter here and  Developers should not write tests
+just to reach a quality gate metric. </p>
+<h2>It ORIENTS the development and code design!</h2>
+<p>A good testing strategy should make the development process easier by allowing you to 
+test small parts of a complex solution individually.</p>
+<p>Also, tests can provide valuable insights into the quality of your code. 
+If the test is too complex to read and cannot be simplified, 
+it may indicate a code smell not in the test itself but in the production code.</p>
+<h2>It is easy to REFACTOR!</h2>
+<p>I often hear people complaining about how tests make their life miserable during the 
+refactoring process. Tests are not supposed to break during a refactor. 
+If it does, it is a smell that your tests are not focusing on at the crucial point of
+any application: Its behavior.</p>
+<p>Developers sometimes focus too much on implementation details. 
+If tests are too tightly coupled to the implementation, refactoring can be difficult
+and time-consuming. It's important to strike a balance between testing implementation
+details and testing the application's behavior.
+Avoid relying too heavily on mocks and instead, focus on validating the behavior of the
+application.</p>
+<h2>It is a DEBUGGING tool</h2>
+<p>No application is completely bulletproof, and bugs will inevitably occur.
+When they do, your testing strategy must be capable of simulating these issues.
+If you're unable to replicate a bug, it suggests that there are certain scenarios that
+your test strategy isn't covering, which directly impacts the <strong>"It Works"</strong> principle.</p>
+<p>Ensure that your testing strategy adapts to your application's increasing complexity.</p>
+<hr>
+<p>With these four principles in mind, it's important to iterate and constantly evaluate your
+testing strategy with your team. Ensure that you are covering all four principles and 
+look for ways to improve your testing approach. These simple principles can help you make 
+better and more informed decisions about your testing strategy.</p>
+
+  <footer class="post-info">
+    <div class="feedbacks">
+      If you'd like to give any feedback on this article, email me at
+      <a href="mailto:carlosmaniero@gmail.com">carlosmaniero@gmail.com</a>.
+    </div>
+    <time class="published" datetime="2023-08-04T00:00:00-03:00">
+      Fri 04 August 2023
+    </time>
+    <div class="category">
+        Category: <a href="/category/engineer-life.html">Engineer life</a>
+    </div>
+  </footer><!-- /.post-info -->
+  </article>
+            </main>
+        </div>
+        <footer>
+            <address id="about" class="vcard body">
+                © 2022 Maniero
+            </address>
+            This website does not use cookies.
+        </footer>
+        <script type="text/javascript">
+         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+         const isDarkModeEnabled = () => {
+             const localValue = localStorage.getItem("dark-mode");
+             if (localValue) {
+                 return localValue === "true";
+             }
+             return !!prefersDarkMode;
+         }
+
+         const toggleDarkModeState = () => localStorage.setItem("dark-mode", !isDarkModeEnabled());
+
+         const toggleThemeTag = () => {
+             const root = document.getElementsByTagName( 'html' )[0]; // '0' to assign the first (and only `HTML` tag)
+             root.setAttribute('data-dark-theme', isDarkModeEnabled());
+         }
+
+         toggleThemeTag();
+
+         document.querySelector('.lights').addEventListener('click', () => {
+             toggleDarkModeState();
+             toggleThemeTag();
+         });
+        </script>
+</body>
+</html>
