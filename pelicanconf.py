@@ -1,7 +1,7 @@
 AUTHOR = 'Maniero'
 SITENAME = 'Maniero'
 SITESUBTITLE = 'Personal blog, mostly about software engineering.'
-SITEURL = 'maniero.me'
+SITEURL = 'https://maniero.me/'
 
 PATH = 'content'
 
