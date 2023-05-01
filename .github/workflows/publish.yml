@@ -14,6 +14,7 @@ jobs:
           pip install -r requirements.txt
           pelican
           cp -r raw/ output/
+          cp maniero.gpg output/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
