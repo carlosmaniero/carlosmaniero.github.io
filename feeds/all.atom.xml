@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maniero</title><link href="https://maniero.me/" rel="alternate"></link><link href="https://maniero.me/feeds/all.atom.xml" rel="self"></link><id>https://maniero.me/</id><updated>2023-08-04T00:00:00-03:00</updated><subtitle>Personal blog, mostly about software engineering.</subtitle><entry><title>A WORD in Software testing</title><link href="https://maniero.me/a-word-in-software-testing.html" rel="alternate"></link><published>2023-08-04T00:00:00-03:00</published><updated>2023-08-04T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:maniero.me,2023-08-04:/a-word-in-software-testing.html</id><summary type="html">&lt;p&gt;Software testing has long been a critical component of ensuring software quality. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maniero</title><link href="https://maniero.me/" rel="alternate"></link><link href="https://maniero.me/feeds/all.atom.xml" rel="self"></link><id>https://maniero.me/</id><updated>2024-08-29T00:00:00-03:00</updated><subtitle>Personal blog, mostly about software engineering.</subtitle><entry><title>Teach More, Abstract Less</title><link href="https://maniero.me/teach-more-abstract-less.html" rel="alternate"></link><published>2024-08-29T00:00:00-03:00</published><updated>2024-08-29T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:maniero.me,2024-08-29:/teach-more-abstract-less.html</id><summary type="html">&lt;p&gt;As developers progress in their careers, they often find themselves in a
+position to enhance team productivity. It’s only natural for senior developers
+to keenly observe where their teams face technical challenges.&lt;/p&gt;
+&lt;p&gt;Consider this scenario: Your colleagues are grappling with a new tool that the
+team collectively decided to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As developers progress in their careers, they often find themselves in a
+position to enhance team productivity. It’s only natural for senior developers
+to keenly observe where their teams face technical challenges.&lt;/p&gt;
+&lt;p&gt;Consider this scenario: Your colleagues are grappling with a new tool that the
+team collectively decided to adopt. Perhaps you championed this choice due to
+your familiarity with the tool. During the team’s learning curve, you noticed a
+dip in productivity.&lt;/p&gt;
+&lt;p&gt;In a stroke of brilliance, you decide to build an abstraction layer on top of
+the tool. You invest days, maybe even weeks, implementing this abstraction.
+Your team approves, and your colleagues appreciate the newfound ease.
+Productivity returns to its previous level, and all seems well.&lt;/p&gt;
+&lt;p&gt;Yet, there’s a catch. Occasionally, the abstraction needs extensions. Your
+teammates, less comfortable with the underlying tool, hesitate to make these
+changes. To prevent them from spending excessive time wrestling with both the
+abstraction and the tool, you step in and handle the modifications.&lt;/p&gt;
+&lt;p&gt;Fast forward: You take a well-deserved vacation. During your absence, the team
+faces a situation requiring adjustments to the abstraction. Suddenly, they’re
+caught in a bind—they must navigate both your abstraction and the underlying
+tool. The end result? The once-elegant abstraction don't look so great anymore.&lt;/p&gt;
+&lt;p&gt;You could blame the labor rights, after all, who needs more than two or three
+days of vacation?&lt;/p&gt;
+&lt;p&gt;You might be tempted to blame labor rights—after all, who needs more than a
+couple of days off? But let’s focus on the heart of the matter: abstractions.
+They demand cautious handling. Before creating one, consider whether your team
+can effectively support it. Abstractions should never be the first answer to
+knowledge gaps.&lt;/p&gt;
+&lt;p&gt;In fact, creating abstraction to help junior developers to perform is the
+most perverse solution for their careers. It inadvertently robs them of
+valuable learning opportunities and autonomy. Usually these abstractions
+lacks documentation leaving junior team member with no reliable reference
+point.&lt;/p&gt;
+&lt;p&gt;So, here’s an alternative approach: Teach before you abstract. Invest time in
+mentoring your colleagues. Pair with them, share knowledge, and foster a
+collaborative environment. When the team collectively decides to abstract
+something, everyone will possess the necessary foundation to contribute
+effectively.&lt;/p&gt;</content><category term="Engineer life"></category></entry><entry><title>A WORD in Software testing</title><link href="https://maniero.me/a-word-in-software-testing.html" rel="alternate"></link><published>2023-08-04T00:00:00-03:00</published><updated>2023-08-04T00:00:00-03:00</updated><author><name>Maniero</name></author><id>tag:maniero.me,2023-08-04:/a-word-in-software-testing.html</id><summary type="html">&lt;p&gt;Software testing has long been a critical component of ensuring software quality. 
 If you are familiar with the ACCELERATE book, you'll know that continuous delivery
 is key to achieving a high-performance organization, and a good testing strategy 
 is essential to enable it.&lt;/p&gt;
