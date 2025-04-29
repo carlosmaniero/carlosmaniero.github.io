@@ -1,0 +1,32 @@
+* {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p, ul, pre {
+  margin-bottom: 2ch;
+}
+hr {
+  margin: 2ch 0;
+  height: 1px;
+  background: white;
+}
+a {
+  color: turquoise;
+}
+body {
+  background: black;
+  color: white;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+ul {
+  padding-left: 2ch;
+}
+
+/* reset of texinfo */
+div.example {
+  margin: 0;
+}
