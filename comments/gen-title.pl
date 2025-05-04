@@ -8,7 +8,7 @@ while (<$fh>) {
 
     open(my $fht,'>', $filename . ".title") or die $!;
 
-    print $fht $1;
+    print $fht $1 . "\n";
 
     exit;
   }
