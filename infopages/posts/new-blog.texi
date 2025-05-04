@@ -1,5 +1,5 @@
 @node New blog
-@chapter This is my new blog
+@chapter New blog
 
 Welcome to my new blog.  Since is a tradition to people talk about the stack
 they choose for their blogs, I'll follow the same path.
