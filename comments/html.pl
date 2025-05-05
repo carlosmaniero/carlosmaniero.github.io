@@ -1,3 +1,4 @@
+use Email::MIME;
 use Email::Simple;
 use Net::IMAP::Client;
 use Data::Dumper;
@@ -70,7 +71,7 @@ my @msgs = $imap->get_rfc822_body([@$messages]);
 foreach my $data (@msgs) {
 
   foreach (@$data) {
-    my $email = Email::Simple->new($$_);
+    my $email = Email::MIME->new($$_);
 
     save_mbox($email->header('Message-Id'), $$_);
     add_to_tree($email);
@@ -129,6 +130,15 @@ sub is_unecessary_quoting {
 sub print_body {
   my $email = $_[0];
   my $body = $email->body;
+
+  if ($email->subparts) {
+    foreach my $part ($email->subparts) {
+      if ($part->content_type =~ m{^text/plain}i) {
+          $body = $part->body;
+          break;
+      }
+    }
+  }
 
   my @lines = split(/\n/, $body);
 

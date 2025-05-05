@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: '*/5 * * * *'
 jobs:
-  build-and-deploy:
+  cron:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,7 +17,7 @@ jobs:
         env:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: |
-          sudo apt-get install libnet-imap-* libemail-simple-perl
+          sudo apt-get install libnet-imap-* libemail-simple-perl libemail-mime-perl
           make
 
       - name: Deploy
