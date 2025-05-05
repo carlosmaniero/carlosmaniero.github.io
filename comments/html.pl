@@ -2,6 +2,7 @@ use Email::Simple;
 use Net::IMAP::Client;
 use Data::Dumper;
 use HTML::Entities;
+use POSIX;
 
 sub trim {
    return $_[0] =~ s/\A\s+|\s+\z//urg;
@@ -80,6 +81,10 @@ sub print_header {
   my $email = $_[0];
   my $key = $_[1];
   my $data = $email->header($key);
+
+  if ($key eq "From") {
+    $data =~ s/(.*)(..)(@)(.*)(\.)(.*)(>)/$1."*" x length($2).$3."*" x length($4).$5 ."*" x length($6).$7/e;
+  }
 
   if ($data) {
     print "<div><strong>$key: </strong>", HTML::Entities::encode_entities($data), "</div>\n";
@@ -195,12 +200,14 @@ sub print_comment_instructions {
 
   print '<div class="comment-instruction">';
 
-  print '<p>Send a <b>plaintext</b> email to <b>carlos@maniero.me</b> to comment in this post.';
+  print '<p>Send a <b>plain-text</b> email using this link <a href="' . $url .'">link</a> if your browser/OS supports <b>mailto</b>.</p>';
+
+  print '<p>Anternativally, send an email to <b>carlos@maniero.me</b>.';
   print ' The email should contain the subject <b>"blogpost: ' . $post . '"</b> (without quotes).</p>';
 
-  print '<p>Or use this <a href="' . $url .'">link</a> if your browser/OS supports <b>mailto</b>.</p>';
+  print '<p>It may take a few minutes to this page to be updated.</p>';
 
-  print '<p>The email will appear here after a couple of minutes.</p>';
+  print '<p>Comments updated at: ' . strftime("%Y-%m-%d %H:%M:%S %Z", localtime()) . '</p>';
 
   print '</div>';
 }
