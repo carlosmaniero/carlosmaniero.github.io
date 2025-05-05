@@ -30,3 +30,30 @@ ul {
 div.example {
   margin: 0;
 }
+
+#comments ol {
+  list-style: none;
+}
+
+#comments li {
+  background: rgba(255,255,255,0.075);
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments .reply-instruction {
+  background: black;
+  padding: 2ch;
+  margin: 2ch;
+}
+
+#comments .comment-instruction {
+  background: turquoise;
+  color: black;
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments .comment-instruction * {
+  color: black;
+}
