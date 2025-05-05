@@ -70,7 +70,7 @@ foreach my $data (@msgs) {
 
   foreach (@$data) {
     my $email = Email::Simple->new($$_);
-    
+
     save_mbox($email->header('Message-Id'), $$_);
     add_to_tree($email);
   }
@@ -195,7 +195,7 @@ sub print_comment_instructions {
 
   print '<div class="comment-instruction">';
 
-  print '<p>Send an email to <b>carlos@maniero.me</b> to comment in this post.';
+  print '<p>Send a <b>plaintext</b> email to <b>carlos@maniero.me</b> to comment in this post.';
   print ' The email should contain the subject <b>"blogpost: ' . $post . '"</b> (without quotes).</p>';
 
   print '<p>Or use this <a href="' . $url .'">link</a> if your browser/OS supports <b>mailto</b>.</p>';
