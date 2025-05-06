@@ -26,6 +26,10 @@ ul {
   padding-left: 2ch;
 }
 
+.contents ul ul {
+  display: none;
+}
+
 /* reset of texinfo */
 div.example {
   margin: 0;
