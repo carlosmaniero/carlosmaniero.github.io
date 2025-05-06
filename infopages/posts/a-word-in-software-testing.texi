@@ -1,0 +1,89 @@
+@node A WORD in Software testing
+@chapter A WORD in Software testing
+
+Software testing has long been a critical component of ensuring software
+quality. If you are familiar with the ACCELERATE book, you'll know that
+continuous delivery is key to achieving a high-performance organization, and a
+good testing strategy is essential to enable it.
+
+There are many resources about testing, integration tests, unit tests, TDD, and
+so on. I would like to have a more abstract discussion about what you should to
+consider before taking decisions on testing.
+
+Long story short, after several meaningful discussions with many teams, I've
+noticed that we always end up with four key principles, which I describe using
+the acronym W.O.R.D.
+
+@section W.O.R.D.
+
+@itemize
+@item
+    It Works.
+@item
+    It Orients the development and code design.
+@item
+    It is easy to Refactor.
+@item
+    It is a Debugging tool.
+@end itemize
+
+@section It WORKS!
+
+One of the main concerns in software quality is to:
+
+@quotation
+Satisfy the customer through early and continuous delivery of valuable
+software
+
+@author Agile Manifesto
+@end quotation
+
+Any testing strategy must provide the safety that any change that passes all
+tests can be ship to production with no fear. A testing strategy that covers
+the application into different levels is required to reach that confidence.
+
+It also requires a team that fully understands that software quality is a role
+of all. Testing culture is an important matter here and Developers should not
+write tests just to reach a quality gate metric. 
+
+@section It ORIENTS the development and code design!
+
+A good testing strategy should make the development process easier by allowing
+you to test small parts of a complex solution individually.
+
+Also, tests can provide valuable insights into the quality of your code. If the
+test is too complex to read and cannot be simplified, it may indicate a code
+smell not in the test itself but in the production code.
+
+@section It is easy to REFACTOR!
+
+I often hear people complaining about how tests make their life miserable
+during the refactoring process. Tests are not supposed to break during a
+refactor. If it does, it is a smell that your tests are not focusing on at the
+crucial point of any application: Its behavior.
+
+Developers sometimes focus too much on implementation details. If tests are too
+tightly coupled to the implementation, refactoring can be difficult and
+time-consuming. It's important to strike a balance between testing
+implementation details and testing the application's behavior. Avoid relying
+too heavily on mocks and instead, focus on validating the behavior of the
+application.
+
+@section It is a DEBUGGING tool
+
+No application is completely bulletproof, and bugs will inevitably occur. When
+they do, your testing strategy must be capable of simulating these issues. If
+you're unable to replicate a bug, it suggests that there are certain scenarios
+that your test strategy isn't covering, which directly impacts the "It Works"
+principle.
+
+Ensure that your testing strategy adapts to your application's increasing
+complexity.
+
+@section Conclusion
+
+With these four principles in mind, it's important to iterate and constantly
+evaluate your testing strategy with your team. Ensure that you are covering all
+four principles and look for ways to improve your testing approach. These
+simple principles can help you make better and more informed decisions about
+your testing strategy.
