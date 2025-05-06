@@ -214,18 +214,31 @@ sub dump_html {
 sub print_comment_instructions {
   my $url = 'mailto:carlos@maniero.me?subject=blogpost: ' . $post;
 
-  print '<div class="comment-instruction">';
+  print '<div class="comment-instruction"><details>';
 
+  print '<summary>Add a comment</summary>';
   print '<p>Send a <b>plain-text</b> email using this link <a href="' . $url .'">link</a> if your browser/OS supports <b>mailto</b>.</p>';
 
-  print '<p>Anternativally, send an email to <b>carlos@maniero.me</b>.';
-  print ' The email should contain the subject <b>"blogpost: ' . $post . '"</b> (without quotes).</p>';
+  print '<p>Alternatively, send an email using your email client as bellow:</p>';
+
+  print '<table>';
+  print '<tr>';
+  print '<th>To:</th>';
+  print '<th>Subject:</th>';
+  print '</tr>';
+  print '<tr>';
+  print '<td>carlos@maniero.me</td>';
+  print '<td>blogpost: ' . $post . '</td>';
+  print '</tr>';
+  print '</table>';
 
   print '<p>It may take a few minutes to this page to be updated.</p>';
 
+  print '<p><strong>Note:</strong> Comments submitted via email will be publicly available on the blog.</p>';
+
   print '<p>Comments updated at: ' . strftime("%Y-%m-%d %H:%M:%S %Z", localtime()) . '</p>';
 
-  print '</div>';
+  print '</div></details>';
 }
 
 print '<hr />';

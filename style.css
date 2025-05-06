@@ -26,6 +26,10 @@ ul {
   padding-left: 2ch;
 }
 
+summary {
+  cursor: pointer;
+}
+
 .contents ul ul {
   display: none;
 }
@@ -60,6 +64,18 @@ div.example {
   color: black;
   padding: 2ch;
   margin-bottom: 2ch;
+}
+
+#comments .comment-instruction table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 1ch;
+  width: 100%;
+}
+#comments .comment-instruction table td,
+#comments .comment-instruction table th {
+  border: 1px solid;
+  padding: 1ch;
 }
 
 #comments .comment-instruction * {
