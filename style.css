@@ -53,6 +53,16 @@ dd {
   padding-left: 2ch;
 }
 
+blockquote {
+  border-left: 1px solid;
+  padding: 2ch;
+}
+
+
+blockquote + .center {
+  padding-bottom: 2ch;
+}
+
 #comments ol {
   list-style: none;
 }

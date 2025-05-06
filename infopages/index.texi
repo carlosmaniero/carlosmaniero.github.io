@@ -22,5 +22,6 @@ These are my latest posts I hope you enjoy.
 
 @include posts/email-as-comments-backend.texi
 @include posts/new-blog.texi
+@include posts/a-word-in-software-testing.texi
 
 @bye
