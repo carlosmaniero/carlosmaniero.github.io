@@ -41,6 +41,10 @@ div.example {
   margin-bottom: 2ch;
 }
 
+#comments pre {
+  white-space: pre-line;
+}
+
 #comments .reply-instruction {
   background: black;
   padding: 2ch;

@@ -4,6 +4,7 @@ use Net::IMAP::Client;
 use Data::Dumper;
 use HTML::Entities;
 use POSIX;
+use Time::Piece;
 
 sub trim {
    return $_[0] =~ s/\A\s+|\s+\z//urg;
@@ -85,6 +86,11 @@ sub print_header {
 
   if ($key eq "From") {
     $data =~ s/(.*)(..)(@)(.*)(\.)(.*)(>)/$1."*" x length($2).$3."*" x length($4).$5 ."*" x length($6).$7/e;
+  }
+
+  if ($key eq "Date") {
+    $data =~ s/\s*\(UTC\)$//;
+    $data = Time::Piece->strptime($data, '%a, %d %b %Y %H:%M:%S %z')->strftime("%Y-%m-%d %H:%M:%S %Z");
   }
 
   if ($data) {
