@@ -1,0 +1,67 @@
+@node Email as comments backend
+@chapter Email as comments backend
+
+This is a static blog, and static blogs usually lakes comments because a
+backend is needed to do so. Or when available it mostly uses some solution that
+involves adding a 3rd-party javascript file that communicate with some sort of
+platform.
+
+But if you had the chance to check my comments section you will see that it
+requests you to send an email to myself with a specific title.
+
+And the entire comment system is build on top of two Perl scripts.
+
+@section Categorization
+
+The first script, receives the post title, and check my INBOX to see if there
+is any comment there. Look how simple it is:
+
+@example perl
+$imap->select('INBOX');
+
+foreach my $post (@@ARGV) @{
+  my $folder = $post;
+  $folder =~ s/ /-/g;
+  $folder =~ s/[^a-zA-Z0-9-]//g;
+  $folder = "INBOX.blogpost." . $folder;
+
+  my $messages = $imap->search(@{SUBJECT => 'blogpost: ' . $post@}, 'DATE');
+
+  $imap->create_folder($folder);
+  $imap->copy(\@@$messages, $folder);
+
+  $imap->delete_message(\@@$messages, '\\Deleted');
+  $imap->expunge();
+@}
+@end example
+
+It just copy comments to a specific holder.
+
+@section Displaying
+
+There are another script, that fetch email from the create folder, and display
+renders them in HTML.
+
+And cron job runs every a couple of minutes to repeat this process and build
+this static HTML.
+
+@section Why I love this so much?
+
+I'm really happy with the results and there are a couple of reasons why:
+
+@table @samp
+@item Spam filter
+My email has a spam filter so I don't need to worry about it.
+
+@item No login required
+You don't need to create an account anywhere to comment. You just need an email.
+
+@item Notifications
+I don't need to have a system to notify you if someone replied your comment, people will send a reply email, so, you will know.
+
+@item Moderation
+I can moderate the comments by just deleting an email.
+
+@item Cheap
+It was both cheap to implement and to maintain, once I already pay for may email server (which could even be free).
+@end table

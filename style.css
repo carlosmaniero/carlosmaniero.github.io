@@ -43,6 +43,16 @@ div.example {
   padding: 2ch 2ch 1ch;
 }
 
+dt {
+  font-weight: bold;
+  margin-bottom: 2ch;
+}
+
+dd {
+  font-weight: bold;
+  padding-left: 2ch;
+}
+
 #comments ol {
   list-style: none;
 }
