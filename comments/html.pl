@@ -253,4 +253,8 @@ print_comment_instructions();
 
 dump_html(\@global_tree);
 
+if (scalar @global_tree == 0) {
+  print '<p>There is no comment yet. Be the first one!</p>';
+}
+
 print "</section>";
