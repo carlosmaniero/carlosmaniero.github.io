@@ -36,7 +36,11 @@ summary {
 
 /* reset of texinfo */
 div.example {
-  margin: 0;
+  background: lightgray;
+  color: black;
+  filter: invert(1);
+  margin: 0 0 2ch 0;
+  padding: 2ch 2ch 1ch;
 }
 
 #comments ol {

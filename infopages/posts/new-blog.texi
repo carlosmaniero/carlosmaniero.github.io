@@ -1,32 +1,31 @@
 @node New blog
 @chapter New blog
 
-Welcome to my new blog.  Since is a tradition to people talk about the stack
+Welcome to my new blog.  Since it is a tradition to people talk about the stack
 they choose for their blogs, I'll follow the same path.
 
 @section Stack
-There is nothing fancy
-here. Just some sexy old school software.
+There is nothing fancy here. Just some sexy old school software.
 
 As expected, this is a static website.
 @url{https://www.gnu.org/software/texinfo/, GNU Texinfo} were used to generate
-this pages.
+this pages. The Texinfo is for manuals, not for blogging, although, it nicely
+fits into my expectations.
 
 @section Comments
 The comment section is just mailing archive, there is a cron job that connects
-into my email over SMTP and fetch emails related to the post.
+into my email over IMAP and fetch emails related to the post.
 
-During the deployment of this site, filters are configured in my email client
-to automatically organize the emails into folders. And this folders are used to
-display the comments bellow.
+I'll talk more about how it works in another post.
 
 @section Look and feel
 The blog style was inspired in how this page is rendered in the terminal using
 @url{https://w3m.sourceforge.net/, w3m}. You can try it out:
 
 @example bash
-w3m https://maniero.me/New-blog.html
+w3m "https://maniero.me/New-blog.html"
 @end example
 
 A fun fact about it is that while most of pages usually uses @code{px} or
-@code{rem} are commonly used, the unit measure used in this blog is @code{ch}.
+@code{rem} are commonly used, the unit measure used in this blog is @code{ch}
+to keep a terminal-like look and feel.

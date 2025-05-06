@@ -17,7 +17,7 @@ jobs:
         env:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: |
-          sudo apt-get install libnet-imap-* libemail-simple-perl libemail-mime-perl
+          sudo apt-get install libnet-imap-* libemail-simple-perl libemail-mime-perl source-highlight
           make
 
       - name: Deploy

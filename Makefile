@@ -5,7 +5,7 @@ all: output/index.html title
 
 output/index.html: infopages/index.texi $(POSTS)
 	@echo "MAKEINFO\t$<"
-	@cd infopages/ && $(MAKEINFO) --css-include=../style.css -o ../output --html index.texi
+	@cd infopages/ && $(MAKEINFO) --css-include=../style.css -o ../output --html index.texi -c HIGHLIGHT_SYNTAX=source-highlight
 
 .PHONY: title
 title:
