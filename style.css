@@ -7,6 +7,11 @@
 h1, h2, h3, h4, h5, h6, p, ul, pre {
   margin-bottom: 2ch;
 }
+h2.subtitle {
+  color: black;
+  background: turquoise;
+  margin-bottom: 1ch;
+}
 hr {
   margin: 2ch 0;
   height: 1px;
@@ -41,6 +46,8 @@ div.example {
   filter: invert(1);
   margin: 0 0 2ch 0;
   padding: 2ch 2ch 1ch;
+  max-width: 100%;
+  overflow: auto;
 }
 
 dt {
