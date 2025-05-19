@@ -1,5 +1,9 @@
 use Net::IMAP::Client;
 
+if (!$ENV{EMAIL_PASS}) {
+  die("EMAIL_PASS env var not set");
+}
+
 sub login{
   my $imap = Net::IMAP::Client->new(
       server => 'imap.hostinger.com',
