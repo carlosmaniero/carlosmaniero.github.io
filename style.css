@@ -112,3 +112,12 @@ blockquote + .center {
 #comments .comment-instruction * {
   color: black;
 }
+
+#subscription {
+  background: yellow;
+  color: black;
+  padding: 2ch;
+}
+#subscription a {
+  color: black;
+}
