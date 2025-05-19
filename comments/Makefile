@@ -2,7 +2,7 @@ POSTS=$(filter-out ../output/index.html, $(wildcard ../output/*.html))
 TITLE_FILES=$(patsubst %,%.title,$(POSTS))
 COMMENTS_FILES=$(patsubst %,%.comments,$(POSTS))
 
-all: ../output/mbox/ categorize $(COMMENTS_FILES)
+all: ../output/mbox/ categorize $(COMMENTS_FILES) subscribe
 
 ../output/%.html.title: ../output/%.html
 	@echo "GEN-TITLE\t$<"
@@ -23,3 +23,7 @@ categorize: $(TITLE_FILES)
 
 ../output/mbox/:
 	@mkdir ../output/mbox/
+
+.PHONY: subscribe
+subscribe:
+	@perl subscribe.pl
