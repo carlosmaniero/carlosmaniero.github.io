@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This is my personal blog.
+
+Copyright © 2025 Maniero. -->
+<title>A WORD in Software testing (Maniero - Personal blog, mostly about software engineering.)</title>
+
+<meta name="description" content="A WORD in Software testing (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="keywords" content="A WORD in Software testing (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Teach-More-Abstract-Less.html" rel="prev" title="Teach More Abstract Less">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.center {text-align:center}
+span:hover a.copiable-link {visibility: visible}
+ul.mark-bullet {list-style-type: disc}
+* {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p, ul, pre {
+  margin-bottom: 2ch;
+}
+hr {
+  margin: 2ch 0;
+  height: 1px;
+  background: white;
+}
+a {
+  color: turquoise;
+}
+body {
+  background: black;
+  color: white;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+ul {
+  padding-left: 2ch;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.contents ul ul {
+  display: none;
+}
+
+/* reset of texinfo */
+div.example {
+  background: lightgray;
+  color: black;
+  filter: invert(1);
+  margin: 0 0 2ch 0;
+  padding: 2ch 2ch 1ch;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 2ch;
+}
+
+dd {
+  font-weight: bold;
+  padding-left: 2ch;
+}
+
+blockquote {
+  border-left: 1px solid;
+  padding: 2ch;
+}
+
+
+blockquote + .center {
+  padding-bottom: 2ch;
+}
+
+#comments ol {
+  list-style: none;
+}
+
+#comments li {
+  background: rgba(255,255,255,0.075);
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments pre {
+  white-space: pre-line;
+}
+
+#comments .reply-instruction {
+  background: black;
+  padding: 2ch;
+  margin: 2ch;
+}
+
+#comments .comment-instruction {
+  background: turquoise;
+  color: black;
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments .comment-instruction table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 1ch;
+  width: 100%;
+}
+#comments .comment-instruction table td,
+#comments .comment-instruction table th {
+  border: 1px solid;
+  padding: 1ch;
+}
+
+#comments .comment-instruction * {
+  color: black;
+}
+
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter-level-extent" id="A-WORD-in-Software-testing">
+<div class="nav-panel">
+<p>
+Previous: <a href="Teach-More-Abstract-Less.html" accesskey="p" rel="prev">Teach More, Abstract Less</a>, Up: <a href="index.html" accesskey="u" rel="up">Posts</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<h2 class="chapter" id="A-WORD-in-Software-testing-1"><span>4 A WORD in Software testing<a class="copiable-link" href="#A-WORD-in-Software-testing-1"> &para;</a></span></h2>
+
+<p>Software testing has long been a critical component of ensuring software
+quality. If you are familiar with the ACCELERATE book, you&rsquo;ll know that
+continuous delivery is key to achieving a high-performance organization, and a
+good testing strategy is essential to enable it.
+</p>
+<p>There are many resources about testing, integration tests, unit tests, TDD, and
+so on. I would like to have a more abstract discussion about what you should to
+consider before taking decisions on testing.
+</p>
+<p>Long story short, after several meaningful discussions with many teams, I&rsquo;ve
+noticed that we always end up with four key principles, which I describe using
+the acronym W.O.R.D.
+</p>
+<ul class="mini-toc">
+<li><a href="#W_002eO_002eR_002eD_002e" accesskey="1">W.O.R.D.</a></li>
+<li><a href="#It-WORKS_0021" accesskey="2">It WORKS!</a></li>
+<li><a href="#It-ORIENTS-the-development-and-code-design_0021" accesskey="3">It ORIENTS the development and code design!</a></li>
+<li><a href="#It-is-easy-to-REFACTOR_0021" accesskey="4">It is easy to REFACTOR!</a></li>
+<li><a href="#It-is-a-DEBUGGING-tool" accesskey="5">It is a DEBUGGING tool</a></li>
+<li><a href="#Conclusion" accesskey="6">Conclusion</a></li>
+</ul>
+<div class="section-level-extent" id="W_002eO_002eR_002eD_002e">
+<h3 class="section"><span>4.1 W.O.R.D.<a class="copiable-link" href="#W_002eO_002eR_002eD_002e"> &para;</a></span></h3>
+
+<ul class="itemize mark-bullet">
+<li>It Works.
+</li><li>It Orients the development and code design.
+</li><li>It is easy to Refactor.
+</li><li>It is a Debugging tool.
+</li></ul>
+
+</div>
+<div class="section-level-extent" id="It-WORKS_0021">
+<h3 class="section"><span>4.2 It WORKS!<a class="copiable-link" href="#It-WORKS_0021"> &para;</a></span></h3>
+
+<p>One of the main concerns in software quality is to:
+</p>
+<blockquote class="quotation">
+<p>Satisfy the customer through early and continuous delivery of valuable
+software
+</p>
+</blockquote>
+<div class="center">&mdash; <em class="emph">Agile Manifesto</em>
+</div>
+<p>Any testing strategy must provide the safety that any change that passes all
+tests can be ship to production with no fear. A testing strategy that covers
+the application into different levels is required to reach that confidence.
+</p>
+<p>It also requires a team that fully understands that software quality is a role
+of all. Testing culture is an important matter here and Developers should not
+write tests just to reach a quality gate metric. 
+</p>
+</div>
+<div class="section-level-extent" id="It-ORIENTS-the-development-and-code-design_0021">
+<h3 class="section"><span>4.3 It ORIENTS the development and code design!<a class="copiable-link" href="#It-ORIENTS-the-development-and-code-design_0021"> &para;</a></span></h3>
+
+<p>A good testing strategy should make the development process easier by allowing
+you to test small parts of a complex solution individually.
+</p>
+<p>Also, tests can provide valuable insights into the quality of your code. If the
+test is too complex to read and cannot be simplified, it may indicate a code
+smell not in the test itself but in the production code.
+</p>
+</div>
+<div class="section-level-extent" id="It-is-easy-to-REFACTOR_0021">
+<h3 class="section"><span>4.4 It is easy to REFACTOR!<a class="copiable-link" href="#It-is-easy-to-REFACTOR_0021"> &para;</a></span></h3>
+
+<p>I often hear people complaining about how tests make their life miserable
+during the refactoring process. Tests are not supposed to break during a
+refactor. If it does, it is a smell that your tests are not focusing on at the
+crucial point of any application: Its behavior.
+</p>
+<p>Developers sometimes focus too much on implementation details. If tests are too
+tightly coupled to the implementation, refactoring can be difficult and
+time-consuming. It&rsquo;s important to strike a balance between testing
+implementation details and testing the application&rsquo;s behavior. Avoid relying
+too heavily on mocks and instead, focus on validating the behavior of the
+application.
+</p>
+</div>
+<div class="section-level-extent" id="It-is-a-DEBUGGING-tool">
+<h3 class="section"><span>4.5 It is a DEBUGGING tool<a class="copiable-link" href="#It-is-a-DEBUGGING-tool"> &para;</a></span></h3>
+
+<p>No application is completely bulletproof, and bugs will inevitably occur. When
+they do, your testing strategy must be capable of simulating these issues. If
+you&rsquo;re unable to replicate a bug, it suggests that there are certain scenarios
+that your test strategy isn&rsquo;t covering, which directly impacts the &quot;It Works&quot;
+principle.
+</p>
+<p>Ensure that your testing strategy adapts to your application&rsquo;s increasing
+complexity.
+</p>
+</div>
+<div class="section-level-extent" id="Conclusion">
+<h3 class="section"><span>4.6 Conclusion<a class="copiable-link" href="#Conclusion"> &para;</a></span></h3>
+
+<p>With these four principles in mind, it&rsquo;s important to iterate and constantly
+evaluate your testing strategy with your team. Ensure that you are covering all
+four principles and look for ways to improve your testing approach. These
+simple principles can help you make better and more informed decisions about
+your testing strategy.
+</p>
+</div>
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Previous: <a href="Teach-More-Abstract-Less.html">Teach More, Abstract Less</a>, Up: <a href="index.html">Posts</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+<hr /><section id="comments"><h3>Commments:</h3><div class="comment-instruction"><details><summary>Add a comment</summary><p>Send a <b>plain-text</b> email using this link <a href="mailto:carlos@maniero.me?subject=blogpost: A WORD in Software testing">link</a> if your browser/OS supports <b>mailto</b>.</p><p>Alternatively, send an email using your email client as bellow:</p><table><tr><th>To:</th><th>Subject:</th></tr><tr><td>carlos@maniero.me</td><td>blogpost: A WORD in Software testing</td></tr></table><p>It may take a few minutes to this page to be updated.</p><p><strong>Note:</strong> Comments submitted via email will be publicly available on the blog.</p><p>Comments updated at: 2025-05-19 00:22:09 UTC</p></div></details><p>There is no comment yet. Be the first one!</p></section></body></html>

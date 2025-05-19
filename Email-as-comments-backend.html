@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This is my personal blog.
+
+Copyright © 2025 Maniero. -->
+<title>Email as comments backend (Maniero - Personal blog, mostly about software engineering.)</title>
+
+<meta name="description" content="Email as comments backend (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="keywords" content="Email as comments backend (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="New-blog.html" rel="next" title="New blog">
+<link href="index.html" rel="prev" title="Top">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+* {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p, ul, pre {
+  margin-bottom: 2ch;
+}
+hr {
+  margin: 2ch 0;
+  height: 1px;
+  background: white;
+}
+a {
+  color: turquoise;
+}
+body {
+  background: black;
+  color: white;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+ul {
+  padding-left: 2ch;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.contents ul ul {
+  display: none;
+}
+
+/* reset of texinfo */
+div.example {
+  background: lightgray;
+  color: black;
+  filter: invert(1);
+  margin: 0 0 2ch 0;
+  padding: 2ch 2ch 1ch;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 2ch;
+}
+
+dd {
+  font-weight: bold;
+  padding-left: 2ch;
+}
+
+blockquote {
+  border-left: 1px solid;
+  padding: 2ch;
+}
+
+
+blockquote + .center {
+  padding-bottom: 2ch;
+}
+
+#comments ol {
+  list-style: none;
+}
+
+#comments li {
+  background: rgba(255,255,255,0.075);
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments pre {
+  white-space: pre-line;
+}
+
+#comments .reply-instruction {
+  background: black;
+  padding: 2ch;
+  margin: 2ch;
+}
+
+#comments .comment-instruction {
+  background: turquoise;
+  color: black;
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments .comment-instruction table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 1ch;
+  width: 100%;
+}
+#comments .comment-instruction table td,
+#comments .comment-instruction table th {
+  border: 1px solid;
+  padding: 1ch;
+}
+
+#comments .comment-instruction * {
+  color: black;
+}
+
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter-level-extent" id="Email-as-comments-backend">
+<div class="nav-panel">
+<p>
+Next: <a href="New-blog.html" accesskey="n" rel="next">New blog</a>, Previous: <a href="index.html" accesskey="p" rel="prev">Posts</a>, Up: <a href="index.html" accesskey="u" rel="up">Posts</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<h2 class="chapter" id="Email-as-comments-backend-1"><span>1 Email as comments backend<a class="copiable-link" href="#Email-as-comments-backend-1"> &para;</a></span></h2>
+
+<p>This is a static blog, and static blogs usually lakes comments because a
+backend is needed to do so. Or when available it mostly uses some solution that
+involves adding a 3rd-party javascript file that communicate with some sort of
+platform.
+</p>
+<p>But if you had the chance to check my comments section you will see that it
+requests you to send an email to myself with a specific title.
+</p>
+<p>And the entire comment system is build on top of two Perl scripts.
+</p>
+<ul class="mini-toc">
+<li><a href="#Categorization" accesskey="1">Categorization</a></li>
+<li><a href="#Displaying" accesskey="2">Displaying</a></li>
+<li><a href="#Why-I-love-this-so-much_003f" accesskey="3">Why I love this so much?</a></li>
+</ul>
+<div class="section-level-extent" id="Categorization">
+<h3 class="section"><span>1.1 Categorization<a class="copiable-link" href="#Categorization"> &para;</a></span></h3>
+
+<p>The first script, receives the post title, and check my INBOX to see if there
+is any comment there. Look how simple it is:
+</p>
+<div class="example user-perl">
+<pre class="example-preformatted"><span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#0000FF">select</span></b><span style="color:#990000">(</span><span style="color:#FF0000">'INBOX'</span><span style="color:#990000">);</span>
+
+<b><span style="color:#0000FF">foreach</span></b> <b><span style="color:#0000FF">my</span></b> <span style="color:#009900">$post</span> <span style="color:#990000">(</span><span style="color:#009900">@ARGV</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+  <b><span style="color:#0000FF">my</span></b> <span style="color:#009900">$folder</span> <span style="color:#990000">=</span> <span style="color:#009900">$post</span><span style="color:#990000">;</span>
+  <span style="color:#009900">$folder</span> <span style="color:#990000">=~</span> <b><span style="color:#0000FF">s</span></b><span style="color:#FF6600">/ /-/</span><b><span style="color:#0000FF">g</span></b><span style="color:#990000">;</span>
+  <span style="color:#009900">$folder</span> <span style="color:#990000">=~</span> <b><span style="color:#0000FF">s</span></b><span style="color:#FF6600">/[^a-zA-Z0-9-]//</span><b><span style="color:#0000FF">g</span></b><span style="color:#990000">;</span>
+  <span style="color:#009900">$folder</span> <span style="color:#990000">=</span> <span style="color:#FF0000">"INBOX.blogpost."</span> <span style="color:#990000">.</span> <span style="color:#009900">$folder</span><span style="color:#990000">;</span>
+
+  <b><span style="color:#0000FF">my</span></b> <span style="color:#009900">$messages</span> <span style="color:#990000">=</span> <span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#000000">search</span></b><span style="color:#990000">(</span><span style="color:#FF0000">{</span>SUBJECT <span style="color:#990000">=&gt;</span> <span style="color:#FF0000">'blogpost: '</span> <span style="color:#990000">.</span> <span style="color:#009900">$post</span><span style="color:#FF0000">}</span><span style="color:#990000">,</span> <span style="color:#FF0000">'DATE'</span><span style="color:#990000">);</span>
+
+  <span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#000000">create_folder</span></b><span style="color:#990000">(</span><span style="color:#009900">$folder</span><span style="color:#990000">);</span>
+  <span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#000000">copy</span></b><span style="color:#990000">(\</span>@<span style="color:#009900">$messages</span><span style="color:#990000">,</span> <span style="color:#009900">$folder</span><span style="color:#990000">);</span>
+
+  <span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#000000">delete_message</span></b><span style="color:#990000">(\</span>@<span style="color:#009900">$messages</span><span style="color:#990000">,</span> <span style="color:#FF0000">'\\Deleted'</span><span style="color:#990000">);</span>
+  <span style="color:#009900">$imap</span><span style="color:#990000">-&gt;</span><b><span style="color:#000000">expunge</span></b><span style="color:#990000">();</span>
+<span style="color:#FF0000">}</span>
+</pre></div>
+
+<p>It just copy comments to a specific holder.
+</p>
+</div>
+<div class="section-level-extent" id="Displaying">
+<h3 class="section"><span>1.2 Displaying<a class="copiable-link" href="#Displaying"> &para;</a></span></h3>
+
+<p>There are another script, that fetch email from the create folder, and display
+renders them in HTML.
+</p>
+<p>And cron job runs every a couple of minutes to repeat this process and build
+this static HTML.
+</p>
+</div>
+<div class="section-level-extent" id="Why-I-love-this-so-much_003f">
+<h3 class="section"><span>1.3 Why I love this so much?<a class="copiable-link" href="#Why-I-love-this-so-much_003f"> &para;</a></span></h3>
+
+<p>I&rsquo;m really happy with the results and there are a couple of reasons why:
+</p>
+<dl class="table">
+<dt>&lsquo;<samp class="samp">Spam filter</samp>&rsquo;</dt>
+<dd><p>My email has a spam filter so I don&rsquo;t need to worry about it.
+</p>
+</dd>
+<dt>&lsquo;<samp class="samp">No login required</samp>&rsquo;</dt>
+<dd><p>You don&rsquo;t need to create an account anywhere to comment. You just need an email.
+</p>
+</dd>
+<dt>&lsquo;<samp class="samp">Notifications</samp>&rsquo;</dt>
+<dd><p>I don&rsquo;t need to have a system to notify you if someone replied your comment, people will send a reply email, so, you will know.
+</p>
+</dd>
+<dt>&lsquo;<samp class="samp">Moderation</samp>&rsquo;</dt>
+<dd><p>I can moderate the comments by just deleting an email.
+</p>
+</dd>
+<dt>&lsquo;<samp class="samp">Cheap</samp>&rsquo;</dt>
+<dd><p>It was both cheap to implement and to maintain, once I already pay for may email server (which could even be free).
+</p></dd>
+</dl>
+</div>
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Next: <a href="New-blog.html">New blog</a>, Previous: <a href="index.html">Posts</a>, Up: <a href="index.html">Posts</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+<hr /><section id="comments"><h3>Commments:</h3><div class="comment-instruction"><details><summary>Add a comment</summary><p>Send a <b>plain-text</b> email using this link <a href="mailto:carlos@maniero.me?subject=blogpost: Email as comments backend">link</a> if your browser/OS supports <b>mailto</b>.</p><p>Alternatively, send an email using your email client as bellow:</p><table><tr><th>To:</th><th>Subject:</th></tr><tr><td>carlos@maniero.me</td><td>blogpost: Email as comments backend</td></tr></table><p>It may take a few minutes to this page to be updated.</p><p><strong>Note:</strong> Comments submitted via email will be publicly available on the blog.</p><p>Comments updated at: 2025-05-19 00:22:10 UTC</p></div></details><p>There is no comment yet. Be the first one!</p></section></body></html>

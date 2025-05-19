@@ -1,0 +1,61 @@
+Return-Path: <johnny@johnnyrichard.com>
+Delivered-To: carlos@maniero.me
+Received: from out-172.mta0.migadu.com (out-172.mta0.migadu.com [91.218.175.172])
+	by nl-srv-smtpin11.hostinger.io (mx.hostinger.com) with ESMTPS id 4Zrbtd2YmQz4KSYV
+	for <carlos@maniero.me>; Mon, 05 May 2025 09:33:29 +0000 (UTC)
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=maniero.me;
+	s=hostingermail1; t=1746437609;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=MV+aZhUYdbwTXF3n2vfdAh/TQRgEioVsq1GyuplslKo=;
+	b=ZSb8q9NBGOiltcE/H666Hb7wicow4+xtrCxvSIyoC3heOlGgjm+4ftz0VEnUwCIKwHczH7
+	hPGwTlztCiRezvvYOmpNQhjAfBJGM7MuMdtn0wZTkvyXYeKD8YET1xy6QYTFaqwhsHqcOx
+	t+Y8PHICLqzBdWvNqN7H+xyeOirFpjgCu/UnyozwE5fARiyFvMQCXIEpQvE5JkqiIvnioJ
+	S96fu2eipkWJgzHCzCiIjDjH1f2rPcTZzouU1RmuWzWWPGTfz14pwR8LT7400k3Kzn01Bk
+	SuhNt91VNYUreA868bagGi6Ayi9CtsQ5RHAiUd5gUrAqkUEr3Oq62A1uvTV6vA==
+ARC-Authentication-Results: i=1;
+	nl-srv-smtpin11.hostinger.io;
+	dkim=pass header.d=johnnyrichard.com header.s=key1 header.b=S0WuirEO;
+	spf=pass (nl-srv-smtpin11.hostinger.io: domain of johnny@johnnyrichard.com designates 91.218.175.172 as permitted sender) smtp.mailfrom=johnny@johnnyrichard.com;
+	dmarc=pass (policy=quarantine) header.from=johnnyrichard.com
+ARC-Seal: i=1; s=hostingermail1; d=maniero.me; t=1746437609; a=rsa-sha256;
+	cv=none;
+	b=NMOnvfU/ufPtrKSMKMMMbiwlovvr9uNk+27YEFiJxEPJuC3PPI6zqXLQxAPSZelB6+Cmc2
+	k7X/7YyIhaYw2K8RqeAvLyd1G1ugA3U9U9CTZ/s1G3S+VuwiS3T9uDWD0LHFZYO0TLRuIH
+	N37KNuPc5jZqJcxsAQV9g1ctObFXC5DtVbOsenD45TgnWHSjJ/aln1oLf4J0b+nJ7CQZm3
+	Rxnn7B98jPel9z5F+vaYnelg7uURnA3Eh9NjmCINZryafkM7lvNVrMY7Gfqa20Uy2DHJii
+	fttLTgueh2O5hjvm+znTVjmQVRMlwQW3H/cdV+qLF8yWPAd4PgjLSy79SWeSdQ==
+Date: Mon, 5 May 2025 11:33:19 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=johnnyrichard.com;
+	s=key1; t=1746437608;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type;
+	bh=MV+aZhUYdbwTXF3n2vfdAh/TQRgEioVsq1GyuplslKo=;
+	b=S0WuirEO3NZtEniwm9GJUZCSOdr7eGqG/Zy8ORD7sSZDj7xhtVbBVp/mrN9FjCoZ0afwHC
+	IgNwkZ7bTDlgRsp0oPxfSdHtlL5L7BeMXlXcPKwiWljwLLgro4xg7lH9WzdvpTgNPtcqi2
+	+boPd+3pUTeXi6vy7+if8kTGm7F+qa2zaeBkcPIOd82ubvrUnI7a1lB+xaBmzRc8cWdk29
+	u6woBO4Z58vYU0o64rFGCRjVaD9wCxSQgIym2F6O+LPvXxgiXUrld+D6IG3GS2oPrq5zKx
+	eSH7KzhxWvgEamiFkrDyPXw4TszliWi1nMom0eQnQUiijTpKnNtjAzKIsnpjWw==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Johnny Richard <johnny@johnnyrichard.com>
+To: carlos@maniero.me
+Subject: blogpost: New blog
+Message-ID: <bm52ey72me6bk2olme3olus3a5g446a5z75sofbxmdmyspmet7@6d2enby2deqh>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+X-Migadu-Flow: FLOW_OUT
+X-CM-Analysis: v=2.4 cv=AoO83/9P c=1 sm=1 tr=0 ts=681885e9 b=1 a=MwAdL5WgAepXJjAGBnigTA==:117 a=MwAdL5WgAepXJjAGBnigTA==:17 a=kj9zAlcOel0A:10 a=nueIW1oBkt0A:10 a=Ot52awg9AAAA:8 a=A1X0JdhQAAAA:8 a=whC8dTckDbcVNXjKXZIA:9 a=CjuIK1q_8ugA:10 a=-FEs8UIgK8oA:10 a=6SLV9iDGnmGjzsHOZ9Iy:22
+X-CM-Envelope: MS4xfIlEOxvzHb+IYxq0uymS6+x/tb9mpjaUZPxEtxdlFUfm/9Tvmgxfjf/4ViYNzl9+ao1t58dwNoMQaUISMAeJt3eyoCgglszuNxHJ5ALOnZS1m7Lt6nQE qkjcV1lmTUCl/WR3reYlTVeNkJu0sJ6luw5+taPsO69w58sxbxCn1lvwUdPQGPKKQTTb8+MYdKiBTbjgMXjEliA1zEB7XUBgUCM=
+
+Great job, very minimalist setup.
+
+I am wondering if everybody is okay on making email address public.
+
+Perhaps the client filter could reformat the email addresses to make
+hard for bots spam (something like email@example.com ->
+email[at]example.com).
+
+Since you are using textinfo, the home page has also the subtitles
+listed in there (https://maniero.me/maniero.me/). I think just the title
+is enough, I believe you can achieve it on texinfo.

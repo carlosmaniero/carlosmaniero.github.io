@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.1, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This is my personal blog.
+
+Copyright © 2025 Maniero. -->
+<title>New blog (Maniero - Personal blog, mostly about software engineering.)</title>
+
+<meta name="description" content="New blog (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="keywords" content="New blog (Maniero - Personal blog, mostly about software engineering.)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Teach-More-Abstract-Less.html" rel="next" title="Teach More Abstract Less">
+<link href="Email-as-comments-backend.html" rel="prev" title="Email as comments backend">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+* {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p, ul, pre {
+  margin-bottom: 2ch;
+}
+hr {
+  margin: 2ch 0;
+  height: 1px;
+  background: white;
+}
+a {
+  color: turquoise;
+}
+body {
+  background: black;
+  color: white;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+ul {
+  padding-left: 2ch;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.contents ul ul {
+  display: none;
+}
+
+/* reset of texinfo */
+div.example {
+  background: lightgray;
+  color: black;
+  filter: invert(1);
+  margin: 0 0 2ch 0;
+  padding: 2ch 2ch 1ch;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 2ch;
+}
+
+dd {
+  font-weight: bold;
+  padding-left: 2ch;
+}
+
+blockquote {
+  border-left: 1px solid;
+  padding: 2ch;
+}
+
+
+blockquote + .center {
+  padding-bottom: 2ch;
+}
+
+#comments ol {
+  list-style: none;
+}
+
+#comments li {
+  background: rgba(255,255,255,0.075);
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments pre {
+  white-space: pre-line;
+}
+
+#comments .reply-instruction {
+  background: black;
+  padding: 2ch;
+  margin: 2ch;
+}
+
+#comments .comment-instruction {
+  background: turquoise;
+  color: black;
+  padding: 2ch;
+  margin-bottom: 2ch;
+}
+
+#comments .comment-instruction table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 1ch;
+  width: 100%;
+}
+#comments .comment-instruction table td,
+#comments .comment-instruction table th {
+  border: 1px solid;
+  padding: 1ch;
+}
+
+#comments .comment-instruction * {
+  color: black;
+}
+
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter-level-extent" id="New-blog">
+<div class="nav-panel">
+<p>
+Next: <a href="Teach-More-Abstract-Less.html" accesskey="n" rel="next">Teach More, Abstract Less</a>, Previous: <a href="Email-as-comments-backend.html" accesskey="p" rel="prev">Email as comments backend</a>, Up: <a href="index.html" accesskey="u" rel="up">Posts</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<h2 class="chapter" id="New-blog-1"><span>2 New blog<a class="copiable-link" href="#New-blog-1"> &para;</a></span></h2>
+
+<p>Welcome to my new blog.  Since it is a tradition to people talk about the stack
+they choose for their blogs, I&rsquo;ll follow the same path.
+</p>
+<ul class="mini-toc">
+<li><a href="#Stack" accesskey="1">Stack</a></li>
+<li><a href="#Comments" accesskey="2">Comments</a></li>
+<li><a href="#Look-and-feel" accesskey="3">Look and feel</a></li>
+</ul>
+<div class="section-level-extent" id="Stack">
+<h3 class="section"><span>2.1 Stack<a class="copiable-link" href="#Stack"> &para;</a></span></h3>
+<p>There is nothing fancy here. Just some sexy old school software.
+</p>
+<p>As expected, this is a static website.
+<a class="url" href="https://www.gnu.org/software/texinfo/">GNU Texinfo</a> were used to generate
+this pages. The Texinfo is for manuals, not for blogging, although, it nicely
+fits into my expectations.
+</p>
+</div>
+<div class="section-level-extent" id="Comments">
+<h3 class="section"><span>2.2 Comments<a class="copiable-link" href="#Comments"> &para;</a></span></h3>
+<p>The comment section is just mailing archive, there is a cron job that connects
+into my email over IMAP and fetch emails related to the post.
+</p>
+<p>I&rsquo;ll talk more about how it works in another post.
+</p>
+</div>
+<div class="section-level-extent" id="Look-and-feel">
+<h3 class="section"><span>2.3 Look and feel<a class="copiable-link" href="#Look-and-feel"> &para;</a></span></h3>
+<p>The blog style was inspired in how this page is rendered in the terminal using
+<a class="url" href="https://w3m.sourceforge.net/">w3m</a>. You can try it out:
+</p>
+<div class="example user-bash">
+<pre class="example-preformatted">w3m <span style="color:#FF0000">"https://maniero.me/New-blog.html"</span>
+</pre></div>
+
+<p>A fun fact about it is that while most of pages usually uses <code class="code">px</code> or
+<code class="code">rem</code> are commonly used, the unit measure used in this blog is <code class="code">ch</code>
+to keep a terminal-like look and feel.
+</p></div>
+</div>
+
+
+
+<hr /><section id="comments"><h3>Commments:</h3><div class="comment-instruction"><details><summary>Add a comment</summary><p>Send a <b>plain-text</b> email using this link <a href="mailto:carlos@maniero.me?subject=blogpost: New blog">link</a> if your browser/OS supports <b>mailto</b>.</p><p>Alternatively, send an email using your email client as bellow:</p><table><tr><th>To:</th><th>Subject:</th></tr><tr><td>carlos@maniero.me</td><td>blogpost: New blog</td></tr></table><p>It may take a few minutes to this page to be updated.</p><p><strong>Note:</strong> Comments submitted via email will be publicly available on the blog.</p><p>Comments updated at: 2025-05-19 00:22:11 UTC</p></div></details><ol><li><div><strong>From: </strong>Johnny Richard &lt;john**@*************.***&gt;</div>
+<div><strong>Date: </strong>2025-05-05 09:33:19 UTC</div>
+<br/><div><pre>Great job, very minimalist setup.
+
+I am wondering if everybody is okay on making email address public.
+
+Perhaps the client filter could reformat the email addresses to make
+hard for bots spam (something like email@example.com -&gt;
+email[at]example.com).
+
+Since you are using textinfo, the home page has also the subtitles
+listed in there (https://maniero.me/maniero.me/). I think just the title
+is enough, I believe you can achieve it on texinfo.
+</pre></div><details><summary>Reply this comment.</summary><div class="reply-instruction"><p>You may reply <strong>publicly</strong> to this message via <strong>plain-text</strong> email using the following method:</p><p>Save the following mbox file, import it into your mail client, and reply-to-all from there: <a target="_blank" href="./mbox/bm52ey72me6bk2olme3olus3a5g446a5z75sofbxmdmyspmet7@6d2enby2deqh">mbox</a></p><p>Avoid top-posting and favor <a target="_blank" href="https://en.wikipedia.org/wiki/Posting_style#Interleaved_style">interleaved quoting</a>.</p></div></details><br><ol><li><div><strong>From: </strong>carlos@maniero.me</div>
+<div><strong>Date: </strong>2025-05-06 02:41:36 UTC</div>
+<br/><div><pre>&gt; I am wondering if everybody is okay on making email address public.
+
+I masked the email as you suggested! Unfortunately it still available
+over the mbox so I included a note in the &quot;add comment&quot; section.
+
+&gt; Since you are using textinfo, the home page has also the subtitles
+&gt; ..., I believe you can achieve it on texinfo.
+
+Did you believe it does not seems like to be possible? I tried my best
+but I could find a way to hide it, so I did a little trick with css. :-(
+
+Thank you very much for your inputs! I really appreciate.
+</pre></div><details><summary>Reply this comment.</summary><div class="reply-instruction"><p>You may reply <strong>publicly</strong> to this message via <strong>plain-text</strong> email using the following method:</p><p>Save the following mbox file, import it into your mail client, and reply-to-all from there: <a target="_blank" href="./mbox/9b69b04feb534af550d40ddcfb278489@maniero.me">mbox</a></p><p>Avoid top-posting and favor <a target="_blank" href="https://en.wikipedia.org/wiki/Posting_style#Interleaved_style">interleaved quoting</a>.</p></div></details></li></ol></li></ol></section></body></html>

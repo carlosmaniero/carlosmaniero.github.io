@@ -1,0 +1,28 @@
+<hr /><section id="comments"><h3>Commments:</h3><div class="comment-instruction"><details><summary>Add a comment</summary><p>Send a <b>plain-text</b> email using this link <a href="mailto:carlos@maniero.me?subject=blogpost: New blog">link</a> if your browser/OS supports <b>mailto</b>.</p><p>Alternatively, send an email using your email client as bellow:</p><table><tr><th>To:</th><th>Subject:</th></tr><tr><td>carlos@maniero.me</td><td>blogpost: New blog</td></tr></table><p>It may take a few minutes to this page to be updated.</p><p><strong>Note:</strong> Comments submitted via email will be publicly available on the blog.</p><p>Comments updated at: 2025-05-19 00:22:11 UTC</p></div></details><ol><li><div><strong>From: </strong>Johnny Richard &lt;john**@*************.***&gt;</div>
+<div><strong>Date: </strong>2025-05-05 09:33:19 UTC</div>
+<br/><div><pre>Great job, very minimalist setup.
+
+I am wondering if everybody is okay on making email address public.
+
+Perhaps the client filter could reformat the email addresses to make
+hard for bots spam (something like email@example.com -&gt;
+email[at]example.com).
+
+Since you are using textinfo, the home page has also the subtitles
+listed in there (https://maniero.me/maniero.me/). I think just the title
+is enough, I believe you can achieve it on texinfo.
+</pre></div><details><summary>Reply this comment.</summary><div class="reply-instruction"><p>You may reply <strong>publicly</strong> to this message via <strong>plain-text</strong> email using the following method:</p><p>Save the following mbox file, import it into your mail client, and reply-to-all from there: <a target="_blank" href="./mbox/bm52ey72me6bk2olme3olus3a5g446a5z75sofbxmdmyspmet7@6d2enby2deqh">mbox</a></p><p>Avoid top-posting and favor <a target="_blank" href="https://en.wikipedia.org/wiki/Posting_style#Interleaved_style">interleaved quoting</a>.</p></div></details><br><ol><li><div><strong>From: </strong>carlos@maniero.me</div>
+<div><strong>Date: </strong>2025-05-06 02:41:36 UTC</div>
+<br/><div><pre>&gt; I am wondering if everybody is okay on making email address public.
+
+I masked the email as you suggested! Unfortunately it still available
+over the mbox so I included a note in the &quot;add comment&quot; section.
+
+&gt; Since you are using textinfo, the home page has also the subtitles
+&gt; ..., I believe you can achieve it on texinfo.
+
+Did you believe it does not seems like to be possible? I tried my best
+but I could find a way to hide it, so I did a little trick with css. :-(
+
+Thank you very much for your inputs! I really appreciate.
+</pre></div><details><summary>Reply this comment.</summary><div class="reply-instruction"><p>You may reply <strong>publicly</strong> to this message via <strong>plain-text</strong> email using the following method:</p><p>Save the following mbox file, import it into your mail client, and reply-to-all from there: <a target="_blank" href="./mbox/9b69b04feb534af550d40ddcfb278489@maniero.me">mbox</a></p><p>Avoid top-posting and favor <a target="_blank" href="https://en.wikipedia.org/wiki/Posting_style#Interleaved_style">interleaved quoting</a>.</p></div></details></li></ol></li></ol></section>
