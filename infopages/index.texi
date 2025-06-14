@@ -20,6 +20,7 @@ Copyright @copyright{} 2025 Maniero.
 
 These are my latest posts I hope you enjoy.
 
+@include posts/i-gonna-press-tab.texi
 @include posts/email-as-comments-backend.texi
 @include posts/new-blog.texi
 @include posts/teach-more-abstract-less.texi

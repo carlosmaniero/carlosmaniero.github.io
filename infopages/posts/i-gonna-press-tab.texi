@@ -1,0 +1,50 @@
+@node I gonna press tab
+@chapter I gonna press tab
+
+I ever had a romantic relationship with the art of producing code. It may seems
+sad for most people but after my family and the greatest Corinthians football
+(soccer) club, programming is what I like most.
+
+I have dedicated years of my life learning how to code, and a huge amount of
+time in never-used software. Like when I built
+@url{https://ragu-framework.github.io/, Ragu}, a entire tooling to handle
+micro-frontends. Or when @url{https://johnnyrichard.com/, Jhonny} and I decided
+to build an entire programming language from scratch (@url{https://o-lang.org/,
+o-lang}).
+
+None of this softwares were made with the intention of been used, but I ever
+put my heart on it. I remember when Johnny and I were hardly disagreeing about
+o-lang's future. I was on the beach, siting in one of those uncomfortable
+chairs texting him with slippery sunscreen hands. I was arguing like in a
+teenager couple fight. That's is how much I care about coding.
+
+Now, here I'm at the work a month ago seeing all my coworkers using for months
+some sort of AI code assistant tool. I found myself kinda obsolete using my old
+almost-vanilla vim with just a few customizations wrote by myself. That's when
+I had one of my worst night of insomnia. And before I could finally fall asleep
+I told myself: "Fuck-off I gonna press tab".
+
+That's what I did. I pressed tab a multiple times in the past month. To be
+honest I felt myself a little more productive. Our work is a lot repetitive,
+for these tasks the AI shines. I still feel sad like when I wanna to code
+something but the AI already give me the code. But that's me at my work.
+
+Obviously, I don't wanna work in a toxic environment, but I'm mature enough to
+know that at my work I'm paid to work and to present the most productive
+version of myself. If AI give any extra productivity I gonna use it.
+
+I would love send and reviewing patches sent by email as most of the Linux
+modules are maintained. And do my entire work in a 80x24 black screen. But this
+never gonna happen in a commercial environment. We hobbyist coders should
+understand that commercial software is not written the same as open source
+code, which also differs from hobby code. We should use the appropriated
+tooling for the environment.
+
+I still use vim, because I'm more productive with it, But now with some AI
+stuff. I may try some modern editor with vim emulation to see if it works.
+
+About hobbies I have more and more challenging myself into the low level as the
+way we produce code commercially evolves. The last few weeks I was basically
+reviewing basic electronics, doing SR Latches by just using transistors.
+
+And at the and I still happy. I do my work and my passion at home.
